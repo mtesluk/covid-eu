@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Map.scss';
+import { LinearProgress } from '@material-ui/core';
 
 import axios from 'axios';
 import * as d3 from 'd3';
@@ -11,6 +12,7 @@ class Map extends React.Component {
     super(props);
     this.ref = React.createRef();
     this.state = {
+      loading: true,
       coronaData: {},
       width: 0,
       endpoints: {
@@ -36,8 +38,7 @@ class Map extends React.Component {
             .projection(projection);
 
 
-    const svg = d3.select('.map')
-          .append('svg')
+    const svg = d3.select('.map__svg')
           .attr('width', width)
           .attr('height', height);
 
@@ -60,6 +61,10 @@ class Map extends React.Component {
           return color
         })
         .attr('stroke', d => 'red')
+        .on('touchstart', d => {
+          const countryName  = d.properties.name;
+          
+        })
         .on('mouseover', d => {
           const countryName  = d.properties.name;
           this._setTooltip(tooltip, {
@@ -72,6 +77,11 @@ class Map extends React.Component {
         .on('mouseout', d => {
           this._setTooltip(tooltip);
         });
+
+        this.setState({
+          ...this.state,
+          loading: false
+        })
 
         this.setState({
           ...this.state,
@@ -131,15 +141,19 @@ class Map extends React.Component {
   render() {
     return (
       <div className="map" ref={this.ref}>
-        <h1>Zakażenia i zgony spowodowane COVID-19 w Europie</h1>
-        <h1>Zródło: https://coronavirus-19-api.herokuapp.com/countries</h1>
-        <h3>Legenda (ilość zakażeń)</h3>
-        <div className="map__legend-element" style={this._getBackgroundcolor("#fff1d9")}>0-1000 osób</div>
-        <div className="map__legend-element" style={this._getBackgroundcolor("#fdcd8b")}>1001-10000 osób</div>
-        <div className="map__legend-element" style={this._getBackgroundcolor("#b55440")}>10001-50000 osób</div>
-        <div className="map__legend-element" style={this._getBackgroundcolor("#b53828")}>50001-100000 osób</div>
-        <div className="map__legend-element" style={{...this._getBackgroundcolor("#500000"), color: "white"}}>100001-220001 osób</div>
+        {this.state.loading && <LinearProgress className="map__progress" color="secondary" />}
+        <h1 className="map__title">Stats of COVID-19 in Europe</h1>
+        <div className="map__legend">
+          <h3 className="map__legend-title">Legend (illness cases)</h3>
+          <div className="map__legend-element" style={this._getBackgroundcolor("#fff1d9")}>0-1000</div>
+          <div className="map__legend-element" style={this._getBackgroundcolor("#fdcd8b")}>1001-10000</div>
+          <div className="map__legend-element" style={this._getBackgroundcolor("#b55440")}>10001-50000</div>
+          <div className="map__legend-element" style={this._getBackgroundcolor("#b53828")}>50001-100000</div>
+          <div className="map__legend-element" style={{...this._getBackgroundcolor("#500000"), color: "white"}}>100001-320001</div>
+          </div>
         <div className="map__tooltip"></div>
+        <svg className="map__svg"></svg>
+        <p className="map__footer">Source: https://coronavirus-19-api.herokuapp.com/countries</p>
       </div>
     )
   }

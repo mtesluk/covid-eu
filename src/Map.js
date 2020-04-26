@@ -9,8 +9,10 @@ import * as d3 from 'd3';
 class Map extends React.Component {
   constructor(props) {
     super(props);
+    this.ref = React.createRef();
     this.state = {
       coronaData: {},
+      width: 0,
       endpoints: {
         countries: "https://coronavirus-19-api.herokuapp.com/countries",
         map: "./eu.json"
@@ -19,13 +21,16 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
+    if (!getComputedStyle) { alert('Not supported'); }
+    const computedStyle = getComputedStyle(this.ref.current);
+    var width = this.ref.current.clientWidth;
+    width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
+
     const tooltip = d3.select('.map__tooltip');
-    const w = 800;
-    const h = 600;
+    const height = 4/5 * width;
     const projection = d3.geoMercator()
-               .center([ 13, 52 ])
-               .translate([ w/2, h/2 ])
-               .scale([ w/1.5 ]);
+               .translate([ width/3, height*1.3 ])
+               .scale([ width/1.8 ]);
 
     const path = d3.geoPath()
             .projection(projection);
@@ -33,8 +38,8 @@ class Map extends React.Component {
 
     const svg = d3.select('.map')
           .append('svg')
-          .attr('width', w)
-          .attr('height', h);
+          .attr('width', width)
+          .attr('height', height);
 
     const promiseMap = d3.json(this.state.endpoints.map, {
       headers: { Accept: "application/json; odata=verbose"}
@@ -125,7 +130,7 @@ class Map extends React.Component {
 
   render() {
     return (
-      <div className="map">
+      <div className="map" ref={this.ref}>
         <h1>Zakażenia i zgony spowodowane COVID-19 w Europie</h1>
         <h1>Zródło: https://coronavirus-19-api.herokuapp.com/countries</h1>
         <h3>Legenda (ilość zakażeń)</h3>

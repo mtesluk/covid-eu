@@ -31,8 +31,8 @@ class Map extends React.Component {
     const tooltip = d3.select('.map__tooltip');
     const height = 4/5 * width;
     const projection = d3.geoMercator()
-               .translate([ width/3, height*1.3 ])
-               .scale([ width/1.8 ]);
+               .translate([ width/4, height*1.6 ])
+               .scale([ width/1.1 ]);
 
     const path = d3.geoPath()
             .projection(projection);
@@ -62,20 +62,23 @@ class Map extends React.Component {
         })
         .attr('stroke', d => 'red')
         .on('touchstart', d => {
-          const countryName  = d.properties.name;
-          
+          // const countryName  = d.properties.name;
         })
         .on('mouseover', d => {
           const countryName  = d.properties.name;
-          this._setTooltip(tooltip, {
-            pageX: d3.event.pageX,
-            pageY: d3.event.pageY,
-            countryName: countryName,
+          this.props.setPickedData({
+            countryName,
             cases: countriesData[countryName]?.cases
-          })
+          });
+          // this._setTooltip(tooltip, {
+          //   pageX: d3.event.pageX,
+          //   pageY: d3.event.pageY,
+          //   countryName: countryName,
+          //   cases: countriesData[countryName]?.cases
+          // })
         })
         .on('mouseout', d => {
-          this._setTooltip(tooltip);
+          // this._setTooltip(tooltip);
         });
 
         this.setState({
@@ -134,26 +137,12 @@ class Map extends React.Component {
     return countries;
   }
 
-  _getBackgroundcolor(color) {
-    return {backgroundColor: color};
-  }
-
   render() {
     return (
       <div className="map" ref={this.ref}>
         {this.state.loading && <LinearProgress className="map__progress" color="secondary" />}
-        <h1 className="map__title">Stats of COVID-19 in Europe</h1>
-        <div className="map__legend">
-          <h3 className="map__legend-title">Legend (illness cases)</h3>
-          <div className="map__legend-element" style={this._getBackgroundcolor("#fff1d9")}>0-1000</div>
-          <div className="map__legend-element" style={this._getBackgroundcolor("#fdcd8b")}>1001-10000</div>
-          <div className="map__legend-element" style={this._getBackgroundcolor("#b55440")}>10001-50000</div>
-          <div className="map__legend-element" style={this._getBackgroundcolor("#b53828")}>50001-100000</div>
-          <div className="map__legend-element" style={{...this._getBackgroundcolor("#500000"), color: "white"}}>100001-320001</div>
-          </div>
-        <div className="map__tooltip"></div>
         <svg className="map__svg"></svg>
-        <p className="map__footer">Source: https://coronavirus-19-api.herokuapp.com/countries</p>
+        <div className="map__tooltip"></div>
       </div>
     )
   }

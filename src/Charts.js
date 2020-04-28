@@ -166,7 +166,7 @@ class Charts extends React.Component {
         <svg className="charts__svg-bar"></svg>
         <header className="charts__header">Less numerous countries</header>
         <svg className="charts__svg-pie"></svg>
-        <div className="charts__tooltip"></div>
+        <p className="info__footer">Source: https://coronavirus-19-api.herokuapp.com/countries</p>
       </div>
     )
   }

@@ -1,24 +1,18 @@
 .info {
-    font-size: 3rem;
-    // animation-name: my;
-    // animation-duration: 1s;
+    font-size: 2rem;
+
     &__anim {
         animation-name: my;
         animation-duration: 1s;
     }
 
-    &__footer {
-        font-size: 1rem;
-    }
-
     &__name {
-        // animation-name: my;
-        // animation-duration: 1s;
+
     }
 
     @keyframes my {
-        0% {font-size: 2rem;}
-        50% {font-size: 4rem;}
-        100% {font-size: 3rem;}
+        // 0% {font-size: 2rem;}
+        // 50% {font-size: 4rem;}
+        // 100% {font-size: 3rem;}
     }
 }

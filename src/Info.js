@@ -13,7 +13,6 @@ class Info extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
     if (this.props.countryName !== prevProps.countryName) {
       setTimeout(() => {
         this.setState({
@@ -26,11 +25,6 @@ class Info extends React.Component {
 
   getSnapshotBeforeUpdate(nextProps, nextState) {
     if (this.props.countryName !== nextProps.countryName) {
-      // clearTimeout(this.state.tm);
-      // this.setState({
-      //   ...this.state,
-      //   cl: ''
-      // })
       this.setState({
         ...this.state,
         cl: 'info__anim'
@@ -42,9 +36,14 @@ class Info extends React.Component {
   render() {
     return (
       <div className={"info " + this.state.cl}>
-        <p className="info__name">Name: {this.props.countryName || 'none'}</p>
-        <p>Cases: {this.props.cases || '0'}</p>
-        <p className="info__footer">Source: https://coronavirus-19-api.herokuapp.com/countries</p>
+        <p className="info__element">Name: {this.props.countryName || 'none'}</p>
+        <p className="info__element">Cases: {this.props.cases || '0'}</p>
+        <p className="info__element">Deaths: {this.props.deaths || '0'}</p>
+        <p className="info__element">Recovered: {this.props.recovered || '0'}</p>
+        <p className="info__element">Critical: {this.props.critical || '0'}</p>
+        <p className="info__element">Cases Per Million: {this.props.casesPerOneMillion || '0'}</p>
+        <p className="info__element">Deaths Per Million: {this.props.deathsPerOneMillion || '0'}</p>
+        <p className="info__element">Tests Per Million: {this.props.testsPerOneMillion || '0'}</p>
       </div>
     )
   }

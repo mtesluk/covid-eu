@@ -65,7 +65,13 @@ class Map extends React.Component {
           const countryName  = d.properties.name;
           this.props.setPickedData({
             countryName,
-            cases: countriesData[countryName]?.cases
+            cases: countriesData[countryName]?.cases,
+            deaths: countriesData[countryName]?.deaths,
+            recovered: countriesData[countryName]?.recovered,
+            critical: countriesData[countryName]?.critical,
+            casesPerOneMillion: countriesData[countryName]?.casesPerOneMillion,
+            deathsPerOneMillion: countriesData[countryName]?.deathsPerOneMillion,
+            testsPerOneMillion: countriesData[countryName]?.testsPerOneMillion,
           });
         });
 

@@ -1,13 +1,14 @@
 .app {
     display: grid;
-    grid-template-columns: [col-1] 20% [col-2] auto [col-3] 10% [col-4];
-    grid-template-rows: [row-1] auto [row-2] auto [row-3] auto [row-4] auto [row-5] ;
+    grid-template-columns: [col-1] 20% [col-2] auto [col-3] 20% [col-4];
+    grid-template-rows: [row-1] auto [row-2] auto [row-3] auto [row-4] auto [row-5] auto [row-6];
     grid-template-areas:
-        "info main legend"
-        "charts main ."
-        ". main ."
-        ". main ."
-        ". main .";
+        "info        main legend"
+        "charts-main main charts-extra"
+        ".           main ."
+        ".           main ."
+        ".           main ."
+        ".           main .";
 
     &__content {
         grid-area: main;
@@ -35,7 +36,7 @@
 
     &__legend {
         grid-area: legend;
-        width: 95%;
+        width: 90%;
         margin: auto;
         margin-top: 3rem;
         padding: 2rem;
@@ -80,8 +81,8 @@
         }
     }
 
-    &__charts {
-        grid-area: charts;
+    &__charts-main {
+        grid-area: charts-main;
 
         width: 90%;
         padding: 2rem;
@@ -96,6 +97,32 @@
             grid-column-end: col-4;
             grid-row-start: row-4;
             grid-row-end: row-5;
+        }
+    }
+
+    &__charts-extra {
+        grid-area: charts-extra;
+
+        width: 90%;
+        padding: 2rem;
+        margin: auto;
+        margin-top: 3rem;
+        background-color: rgb(245, 239, 239);
+        box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+
+        @media screen and (max-width: 1200px) {
+            grid-column-start: col-2;
+            grid-column-end: col-4;
+            grid-row-start: row-4;
+            grid-row-end: row-5;
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 95%;
+            grid-column-start: col-1;
+            grid-column-end: col-4;
+            grid-row-start: row-5;
+            grid-row-end: row-6;
         }
     }
 }

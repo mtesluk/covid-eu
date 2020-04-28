@@ -1,12 +1,7 @@
 .charts {
-    &__tooltip {
-        display: none;
-        background-color: black;
-        font-size: 1.5rem;
-        color: white;
-        position: absolute;
-        z-index: 1000;
-        padding: 0 1rem;
+    &__header {
+        font-size: 2rem;
+        text-align: center;
     }
 
     rect:hover {

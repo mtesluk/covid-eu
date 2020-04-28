@@ -5,40 +5,8 @@
         margin-top: 5vw;
     }
 
-    &__title, &__legend-title, &__footer {
-        color: rgb(115, 115, 115);
-        font-size: 2rem;
-        font-family: sans-serif;
-        font-weight: bold;
-        padding-bottom: 1rem;
-    }
-
-    &__legend-title, &__footer {
-        font-size: 2rem;
-    }
-
-    &__legend {
-        padding: .3rem .6rem .4rem .6rem;
-        // border: 1px solid rgb(126, 121, 121);
-        margin-bottom: 1rem;
-    }
-
-    &__progress {
-
-    }
-
     &__svg {
         background-color: rgb(248, 245, 245);
-    }
-
-    &__tooltip {
-        display: none;
-        background-color: black;
-        font-size: 1.5rem;
-        color: white;
-        position: absolute;
-        z-index: 1000;
-        padding: 0 1rem;
     }
 
     path:hover {

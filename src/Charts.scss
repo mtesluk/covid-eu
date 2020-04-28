@@ -1,0 +1,16 @@
+.charts {
+    &__tooltip {
+        display: none;
+        background-color: black;
+        font-size: 1.5rem;
+        color: white;
+        position: absolute;
+        z-index: 1000;
+        padding: 0 1rem;
+    }
+
+    rect:hover {
+        fill: rgba(58, 53, 53, 0.322);
+        cursor: pointer;
+    }
+}

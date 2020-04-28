@@ -18,8 +18,14 @@
         background-color: rgb(245, 239, 239);
         box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 
-        @media screen and (max-width: 1000px) {
-            width: 95%;
+        @media screen and (max-width: 1200px) {
+            grid-column-start: col-2;
+            grid-column-end: col-4;
+            grid-row-start: row-1;
+            grid-row-end: row-3;
+        }
+
+        @media screen and (max-width: 800px) {
             grid-column-start: col-1;
             grid-column-end: col-4;
             grid-row-start: row-2;
@@ -35,8 +41,15 @@
         padding: 2rem;
         background-color: rgb(245, 239, 239);
         box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
-        
-        @media screen and (max-width: 1000px) {
+
+        @media screen and (max-width: 1200px) {
+            grid-column-start: col-2;
+            grid-column-end: col-4;
+            grid-row-start: row-3;
+            grid-row-end: row-4;
+        }
+
+        @media screen and (max-width: 800px) {
             width: 95%;
             grid-column-start: col-1;
             grid-column-end: col-4;
@@ -55,8 +68,11 @@
         background-color: rgb(245, 239, 239);
         box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 
-        @media screen and (max-width: 1000px) {
-            width: 95%;
+        @media screen and (max-width: 800px) {
+            position: sticky;
+            margin-top: 0;
+            top: 0;
+            width: 100%;
             grid-column-start: col-1;
             grid-column-end: col-4;
             grid-row-start: row-1;
@@ -74,7 +90,7 @@
         background-color: rgb(245, 239, 239);
         box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 800px) {
             width: 95%;
             grid-column-start: col-1;
             grid-column-end: col-4;

@@ -8,18 +8,19 @@ import Charts from './Charts'
 import Legend from './Legend'
 
 const App = () => {
-  const [data, setData] = useState({});
+  const [countryInfo, setCountryInfo] = useState({});
+  const [countriesData, setCountriesData] = useState([]);
 
   return (
     <div className="app">
       <div className="app__info">
-        <Info {...data}></Info>
+        <Info {...countryInfo}></Info>
       </div>
       <div className="app__charts">
-        <Charts></Charts>
+        <Charts setPickedData={setCountryInfo} data={countriesData}></Charts>
       </div>
       <div className="app__content">
-        <Map setPickedData={setData}></Map>
+        <Map setPickedData={setCountryInfo} setAllData={setCountriesData}></Map>
       </div>
       <div className="app__legend">
         <Legend></Legend>

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import './App.scss';
 
-import Map from './Map'
-import Info from './Info'
-import ChartsMain from './ChartsMain'
-import ChartsExtra from './ChartsExtra'
-import Legend from './Legend'
+import Map from './Map';
+import Info from './Info';
+import ChartsMain from './ChartsMain';
+import ChartsExtra from './ChartsExtra';
+import Legend from './Legend';
 
 const App = () => {
   const [countryInfo, setCountryInfo] = useState({});

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './Charts.scss';
+import './ChartsExtra.scss';
 import { LinearProgress } from '@material-ui/core';
 
-import BarChart from './charts/BarChart';
-import PieChart from './charts/PieChart';
+import { BarChart } from 'charts';
+import { ranges as colorRanges } from './config';
 
 
 class ChartsExtra extends React.Component {
@@ -58,9 +58,13 @@ class ChartsExtra extends React.Component {
       <div className="charts-extra" ref={this.ref}>
         {this.state.loading && <LinearProgress className="charts-extra__progress" color="secondary" />}
         <header className="charts-extra__header">Most deaths</header>
-        <BarChart classSvgName="charts-extra__svg-bar" setPickedData={this.props.setPickedData} width={this.state.mostNumDeathsChart.width} data={this.state.mostNumDeathsChart.data}></BarChart>
-        <header className="charts-extra__header">Tests</header>
-        <PieChart classSvgName="charts-extra__svg-pie" setPickedData={this.props.setPickedData} width={this.state.lessNumCasesChart.width} data={this.state.lessNumCasesChart.data}></PieChart>
+        <BarChart
+          classSvgName="charts-extra__svg-bar"
+          setPickedData={this.props.setPickedData}
+          width={this.state.mostNumDeathsChart.width}
+          data={this.state.mostNumDeathsChart.data}
+          ranges={colorRanges}
+        ></BarChart>
       </div>
     )
   }

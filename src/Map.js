@@ -5,6 +5,8 @@ import { LinearProgress } from '@material-ui/core';
 
 import axios from 'axios';
 import * as d3 from 'd3';
+import { ranges } from './config';
+import { manageColors } from 'charts';
 
 
 class Map extends React.Component {
@@ -57,7 +59,7 @@ class Map extends React.Component {
         .attr('d', path)
         .attr('fill', d => {
           const countryName  = d.properties.name;
-          var color = this._manageColors(countriesData[countryName]?.cases)
+          var color = manageColors(countriesData[countryName]?.cases, ranges)
           return color
         })
         .attr('stroke', d => 'red')
@@ -85,22 +87,6 @@ class Map extends React.Component {
           coronaData: countriesData
         });
     });
-  }
-
-  _manageColors(amount) {
-    if (!amount) return '#ff0909';
-    const ranges = [
-      {min: 0, max: 1000, color: '#fff1d9'},
-      {min: 1001, max: 10000, color: '#fdcd8b'},
-      {min: 10001, max: 50000, color: '#b55440'},
-      {min: 50001, max: 100000, color: '#b53828'},
-      {min: 100001, max: 420001, color: '#500000'},
-    ]
-
-    for(var range of ranges) {
-      if (amount > range.min && amount < range.max) return range.color;
-    }
-    return '#000';
   }
 
   _filterCountries(countries, properties) {

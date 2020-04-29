@@ -14,7 +14,8 @@
     "node-sass": "^4.14.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "charts": "./charts"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import './Charts.scss';
+import './ChartsMain.scss';
 import { LinearProgress } from '@material-ui/core';
 
-import BarChart from './charts/BarChart';
-import PieChart from './charts/PieChart';
+import { BarChart } from 'charts';
+import { PieChart } from 'charts';
+import { ranges as colorRanges } from './config';
 
 
 class ChartsMain extends React.Component {
@@ -58,9 +59,20 @@ class ChartsMain extends React.Component {
       <div className="charts-main" ref={this.ref}>
         {this.state.loading && <LinearProgress className="charts-main__progress" color="secondary" />}
         <header className="charts-main__header">Most numerous countries</header>
-        <BarChart classSvgName="charts-main__svg-bar" setPickedData={this.props.setPickedData} width={this.state.mostNumCasesChart.width} data={this.state.mostNumCasesChart.data}></BarChart>
+        <BarChart
+          classSvgName="charts-main__svg-bar"
+          setPickedData={this.props.setPickedData}
+          width={this.state.mostNumCasesChart.width}
+          data={this.state.mostNumCasesChart.data}
+          ranges={colorRanges}
+        ></BarChart>
         <header className="charts-main__header">Less numerous countries</header>
-        <PieChart classSvgName="charts-main__svg-pie" setPickedData={this.props.setPickedData} width={this.state.lessNumCasesChart.width} data={this.state.lessNumCasesChart.data}></PieChart>
+        <PieChart
+          classSvgName="charts-main__svg-pie"
+          setPickedData={this.props.setPickedData}
+          width={this.state.lessNumCasesChart.width}
+          data={this.state.lessNumCasesChart.data}
+        ></PieChart>
         <p className="charts-main__footer">Source: https://coronavirus-19-api.herokuapp.com/countries</p>
       </div>
     )

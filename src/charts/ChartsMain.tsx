@@ -4,8 +4,9 @@ import './ChartsMain.scss';
 import { LinearProgress } from '@material-ui/core';
 
 import { BarChart, PieChart, DataBasic } from 'charts';
-import { rangesConfig } from './config';
-import { Info } from './interfaces';
+import { rangesConfigCases } from '../shared/config';
+import { Info } from '../shared/interfaces';
+import { mapDataToInfo, getWidth } from '../shared/utils';
 
 
 interface State {
@@ -21,6 +22,7 @@ interface Props {
 
 class ChartsMain extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
+  additionalCountries: string[] = ['Poland'];
 
   constructor(props: Props) {
     super(props);
@@ -39,9 +41,9 @@ class ChartsMain extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
-      const width = this._getWidth();
-      const dataMost = this.props.data.filter((el: Info) => (el.cases > 100000 || el.country === 'Poland')).map((el: Info) => ({name: el.country, value: el.cases}));
-      const dataLess = this.props.data.filter((el: Info) => (el.cases < 3000 || el.country === 'Poland')).map((el: Info) => ({name: el.country, value: el.cases}));
+      const width = getWidth(this.ref.current);
+      const dataMost = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
+      const dataLess = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases < 3000 || this.additionalCountries.includes(el.country)));
 
       this.setState({
         ...this.state,
@@ -56,14 +58,6 @@ class ChartsMain extends React.Component<Props, State> {
         },
       });
     }
-  }
-
-  _getWidth() {
-    if (!getComputedStyle) { alert('Not supported'); }
-    const computedStyle = getComputedStyle(this.ref.current as Element);
-    var width = this.ref?.current?.clientWidth || 0;
-    width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
-    return width;
   }
 
   setPickedData(name: string) {
@@ -81,7 +75,7 @@ class ChartsMain extends React.Component<Props, State> {
           setPickedData={(name: string) => this.setPickedData(name)}
           width={this.state.mostNumCasesChart.width}
           data={this.state.mostNumCasesChart.data}
-          rangeColor={rangesConfig}
+          colors={rangesConfigCases}
         ></BarChart>
         <header className="charts-main__header">Less numerous countries</header>
         <PieChart

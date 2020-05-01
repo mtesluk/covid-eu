@@ -1,8 +1,11 @@
-import { RangeConfig } from "./interfaces";
+import { RangeConfig } from './interfaces';
 
-export const manageColors = (amount: number, rangeConfig: RangeConfig) => {
-  for(var range of rangeConfig.ranges) {
+export const manageColors = (amount: number, colors: RangeConfig | string) => {
+  if (!(colors instanceof Object)) {
+    return colors;
+  }
+  for(var range of colors.ranges) {
     if (amount > range.min && amount < range.max) return range.color;
   }
-  return rangeConfig.default;
+  return colors.default;
 };

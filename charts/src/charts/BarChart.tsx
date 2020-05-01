@@ -12,7 +12,7 @@ interface State {
 }
 
 interface Props extends PropsBasic {
-  rangeColor: RangeConfig;
+  colors: RangeConfig | string;
 }
 
 class BarChart extends React.Component<Props, State> {
@@ -21,7 +21,7 @@ class BarChart extends React.Component<Props, State> {
     const width = this.props.width;
     const height = 4/5 * width;
     const data = this.props.data;
-    this._prepareChart(height, width, data, this.props.rangeColor);
+    this._prepareChart(height, width, data, this.props.colors);
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
@@ -29,11 +29,11 @@ class BarChart extends React.Component<Props, State> {
       const width = this.props.width;
       const height = 4/5 * width;
       const data = this.props.data;
-      this._prepareChart(height, width, data, this.props.rangeColor);
+      this._prepareChart(height, width, data, this.props.colors);
     }
   }
 
-  _prepareChart(height: number, width: number, data: DataBasic[], ranges: RangeConfig) {
+  _prepareChart(height: number, width: number, data: DataBasic[], colors: RangeConfig | string) {
     const margin = ({top: 30, right: 0, bottom: 30, left: 40});
     const y = d3.scaleLinear()
       .domain([0, d3.max(data, d => (d.value as any))]).nice()
@@ -60,7 +60,7 @@ class BarChart extends React.Component<Props, State> {
       .selectAll('rect')
       .data(data)
       .join('rect')
-      .attr('fill', d => manageColors(d.value, ranges))
+      .attr('fill', d => manageColors(d.value, colors))
       .attr('x', (d, i) => (x(i as any) as any))
       .attr('y', d => y(d.value))
       .attr('height', d => y(0) - y(d.value))

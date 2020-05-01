@@ -5,10 +5,10 @@ import { LinearProgress } from '@material-ui/core';
 
 import axios from 'axios';
 import * as d3 from 'd3';
-import { rangesConfig } from './config';
+import { rangesConfigCases } from '../shared/config';
 import { manageColors } from 'charts';
 import { FeatureCollection } from 'geojson';
-import { Info } from './interfaces';
+import { Info } from '../shared/interfaces';
 
 
 interface State {
@@ -155,7 +155,7 @@ class Map extends React.Component<Props, State> {
         .attr('d', path)
         .attr('fill', d => {
           const countryName  = d.properties?.name;
-          var color = manageColors(countriesData[countryName]?.cases, rangesConfig)
+          var color = manageColors(countriesData[countryName]?.cases, rangesConfigCases)
           return color;
         })
         .attr('stroke', d => 'red')

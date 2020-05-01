@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Info.scss';
 
-import { Info as IInfo } from './interfaces';
+import { Info as IInfo } from '../shared/interfaces';
 
 interface State {
   extraClass: string;

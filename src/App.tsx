@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import './App.scss';
 
-import Map from './Map';
-import Info from './Info';
-import ChartsMain from './ChartsMain';
-import ChartsExtra from './ChartsExtra';
-import Legend from './Legend';
-import { Info as IInfo } from './interfaces';
+import Map from './map/Map';
+import Info from './others/Info';
+import ChartsMain from './charts/ChartsMain';
+import ChartsExtra from './charts/ChartsExtra';
+import Legend from './others/Legend';
+import { Info as IInfo } from './shared/interfaces';
 
 const App = () => {
   const [countryInfo, setCountryInfo] = useState<IInfo>({

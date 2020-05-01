@@ -4,8 +4,9 @@ import './ChartsExtra.scss';
 import { LinearProgress } from '@material-ui/core';
 
 import { BarChart, DataBasic } from 'charts';
-import { rangesConfig } from './config';
-import { Info } from './interfaces';
+import { rangesConfigDeaths } from '../shared/config';
+import { Info } from '../shared/interfaces';
+import { mapDataToInfo, getWidth } from '../shared/utils';
 
 interface State {
   loading: boolean;
@@ -20,6 +21,7 @@ interface Props {
 
 class ChartsExtra extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
+  additionalCountries: string[] = ['Poland'];
 
   constructor(props: Props) {
     super(props);
@@ -38,9 +40,8 @@ class ChartsExtra extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
-      const width = this._getWidth();
-      const dataMostDeaths = this.props.data.filter((el: Info) => (el.deaths > 20000 || el.country === 'Poland')).map((el: Info) => ({name: el.country, value: el.cases}));
-      const dataLess = this.props.data.filter((el: Info) => (el.testsPerOneMillion > 9000 || el.country === 'Poland')).map((el: Info) => ({name: el.country, value: el.cases}));
+      const width = getWidth(this.ref.current);
+      const dataMostDeaths = mapDataToInfo(this.props.data, 'deaths', (el: Info) => (el.deaths > 20000 || this.additionalCountries.includes(el.country)));
 
       this.setState({
         ...this.state,
@@ -51,18 +52,10 @@ class ChartsExtra extends React.Component<Props, State> {
         },
         lessNumCasesChart: {
           width,
-          data: dataLess
+          data: dataMostDeaths
         },
       });
     }
-  }
-
-  _getWidth() {
-    if (!getComputedStyle) { alert('Not supported'); }
-    const computedStyle = getComputedStyle(this.ref.current as Element);
-    var width = this.ref?.current?.clientWidth || 0;
-    width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
-    return width;
   }
 
   setPickedData(name: string) {
@@ -80,7 +73,7 @@ class ChartsExtra extends React.Component<Props, State> {
           setPickedData={(name: string) => this.setPickedData(name)}
           width={this.state.mostNumDeathsChart.width}
           data={this.state.mostNumDeathsChart.data}
-          rangeColor={rangesConfig}
+          colors={rangesConfigDeaths}
         ></BarChart>
       </div>
     )

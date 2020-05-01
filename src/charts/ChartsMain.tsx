@@ -4,7 +4,7 @@ import './ChartsMain.scss';
 import { LinearProgress } from '@material-ui/core';
 
 import { BarChart, PieChart, DataBasic } from 'charts';
-import { rangesConfigCases } from '../shared/config';
+import { mostCommonColor } from '../shared/config';
 import { Info } from '../shared/interfaces';
 import { mapDataToInfo, getWidth } from '../shared/utils';
 
@@ -75,7 +75,7 @@ class ChartsMain extends React.Component<Props, State> {
           setPickedData={(name: string) => this.setPickedData(name)}
           width={this.state.mostNumCasesChart.width}
           data={this.state.mostNumCasesChart.data}
-          colors={rangesConfigCases}
+          colors={mostCommonColor}
         ></BarChart>
         <header className="charts-main__header">Most numerous deaths</header>
         <PieChart

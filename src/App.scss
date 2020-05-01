@@ -1,29 +1,41 @@
 .app {
+    padding: 3rem 3rem;
     display: grid;
-    grid-template-columns: [col-1] 20% [col-2] auto [col-3] 20% [col-4];
-    grid-template-rows: [row-1] auto [row-2] auto [row-3] auto [row-4] auto [row-5] auto [row-6];
+    grid-template-columns: [col-1] 20% [col-2] 1fr [col-3] 20% [col-4];
+    grid-template-rows: [row-1] auto [row-2] auto [row-3] auto [row-4] auto [row-5];
     grid-template-areas:
-        "info        main legend"
+        "info        main charts-extra"
         "charts-main main charts-extra"
         ".           main ."
         ".           main ."
         ".           main ."
         ".           main .";
+    gap: 2rem;
 
-    &__content {
-        grid-area: main;
-        width: 95%;
-        margin: auto;
-        margin-top: 3rem;
+    @media screen and (max-width: 800px) {
+        padding: 0 0 3rem 0;
+    }
+
+    & > *:not(.app__info) {
+        @media screen and (max-width: 800px) {
+            margin: 0 3rem;
+        }
+    }
+
+    & > * {
         padding: 2rem;
         background-color: rgb(245, 239, 239);
         box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+    }
+
+    &__content {
+        grid-area: main;
 
         @media screen and (max-width: 1200px) {
             grid-column-start: col-2;
             grid-column-end: col-4;
             grid-row-start: row-1;
-            grid-row-end: row-3;
+            grid-row-end: row-2;
         }
 
         @media screen and (max-width: 800px) {
@@ -34,46 +46,14 @@
         }
     }
 
-    &__legend {
-        grid-area: legend;
-        width: 90%;
-        margin: auto;
-        margin-top: 3rem;
-        padding: 2rem;
-        background-color: rgb(245, 239, 239);
-        box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
-
-        @media screen and (max-width: 1200px) {
-            grid-column-start: col-2;
-            grid-column-end: col-4;
-            grid-row-start: row-3;
-            grid-row-end: row-4;
-        }
-
-        @media screen and (max-width: 800px) {
-            width: 95%;
-            grid-column-start: col-1;
-            grid-column-end: col-4;
-            grid-row-start: row-3;
-            grid-row-end: row-4;
-        }
-    }
 
     &__info {
         grid-area: info;
-
-        width: 90%;
-        padding: 2rem;
-        margin: auto;
-        margin-top: 3rem;
-        background-color: rgb(245, 239, 239);
-        box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 
         @media screen and (max-width: 800px) {
             position: sticky;
             margin-top: 0;
             top: 0;
-            width: 100%;
             grid-column-start: col-1;
             grid-column-end: col-4;
             grid-row-start: row-1;
@@ -84,45 +64,29 @@
     &__charts-main {
         grid-area: charts-main;
 
-        width: 90%;
-        padding: 2rem;
-        margin: auto;
-        margin-top: 3rem;
-        background-color: rgb(245, 239, 239);
-        box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
-
         @media screen and (max-width: 800px) {
-            width: 95%;
             grid-column-start: col-1;
             grid-column-end: col-4;
-            grid-row-start: row-4;
-            grid-row-end: row-5;
+            grid-row-start: row-3;
+            grid-row-end: row-4;
         }
     }
 
     &__charts-extra {
         grid-area: charts-extra;
 
-        width: 90%;
-        padding: 2rem;
-        margin: auto;
-        margin-top: 3rem;
-        background-color: rgb(245, 239, 239);
-        box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
-
         @media screen and (max-width: 1200px) {
             grid-column-start: col-2;
             grid-column-end: col-4;
-            grid-row-start: row-4;
-            grid-row-end: row-5;
+            grid-row-start: row-2;
+            grid-row-end: row-3;
         }
 
         @media screen and (max-width: 800px) {
-            width: 95%;
             grid-column-start: col-1;
             grid-column-end: col-4;
-            grid-row-start: row-5;
-            grid-row-end: row-6;
+            grid-row-start: row-4;
+            grid-row-end: row-5;
         }
     }
 }

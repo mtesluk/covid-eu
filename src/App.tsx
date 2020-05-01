@@ -6,7 +6,6 @@ import Map from './map/Map';
 import Info from './others/Info';
 import ChartsMain from './charts/ChartsMain';
 import ChartsExtra from './charts/ChartsExtra';
-import Legend from './others/Legend';
 import { Info as IInfo } from './shared/interfaces';
 
 const App = () => {
@@ -32,9 +31,6 @@ const App = () => {
       </div>
       <div className="app__content">
         <Map setPickedData={(data: IInfo) => setCountryInfo(data)} setAllData={(data: IInfo[]) => setCountriesData(data)}></Map>
-      </div>
-      <div className="app__legend">
-        <Legend></Legend>
       </div>
       <div className="app__charts-extra">
         <ChartsExtra setPickedData={(data: IInfo) => setCountryInfo(data)} data={countriesData}></ChartsExtra>

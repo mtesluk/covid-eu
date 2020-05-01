@@ -4,7 +4,7 @@ import './ChartsExtra.scss';
 import { LinearProgress } from '@material-ui/core';
 
 import { BarChart, DataBasic } from 'charts';
-import { rangesConfigTests, mostCommonColor } from '../shared/config';
+import { mostCommonColor } from '../shared/config';
 import { Info } from '../shared/interfaces';
 import { mapDataToInfo, getWidth } from '../shared/utils';
 
@@ -84,7 +84,7 @@ class ChartsExtra extends React.Component<Props, State> {
           setPickedData={(name: string) => this.setPickedData(name)}
           width={this.state.mostNumTestsPerMillionChart.width}
           data={this.state.mostNumTestsPerMillionChart.data}
-          colors={rangesConfigTests}
+          colors={mostCommonColor}
         ></BarChart>
         <header className="charts-extra__header">Most cases per million</header>
         <BarChart

@@ -1,13 +1,11 @@
 .info {
     font-size: 2rem;
+    display: flex;
+    justify-content: space-evenly;
 
     &__anim {
         animation-name: my;
         animation-duration: 1s;
-    }
-
-    &__name {
-
     }
 
     @keyframes my {

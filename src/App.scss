@@ -1,7 +1,7 @@
 .app {
     padding: 3rem 3rem;
     display: grid;
-    grid-template-columns: [col-1] 20% [col-2] 1fr [col-3] 20% [col-4];
+    grid-template-columns: [col-1] 30% [col-2] 1fr [col-3] 20% [col-4];
     grid-template-rows: [row-1] auto [row-2] auto [row-3] auto [row-4] auto [row-5];
     grid-template-areas:
         "info        main charts-extra"

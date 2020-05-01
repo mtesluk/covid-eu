@@ -19,7 +19,7 @@ const Legend = (props: Props) => {
       <div className="legend__element" style={getBackgroundcolor("#fdcd8b")}></div>
       <div className="legend__element" style={getBackgroundcolor("#b55440")}></div>
       <div className="legend__element" style={getBackgroundcolor("#b53828")}></div>
-      <div className="legend__element" style={{...getBackgroundcolor("#500000"), color: "white"}}>Most</div>
+      <div className="legend__element" style={{...getBackgroundcolor("#500000"), color: "white"}}>More</div>
     </div>
   )
 }

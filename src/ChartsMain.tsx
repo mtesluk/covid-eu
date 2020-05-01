@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 
 import './ChartsMain.scss';
 import { LinearProgress } from '@material-ui/core';
 
-import { BarChart } from 'charts';
-import { PieChart } from 'charts';
-import { ranges as colorRanges } from './config';
+import { BarChart, PieChart, DataBasic } from 'charts';
+import { rangesConfig } from './config';
+import { Info } from './interfaces';
 
 
-class ChartsMain extends React.Component {
-  constructor(props) {
+interface State {
+  loading: boolean;
+  mostNumCasesChart: {width: number, data: DataBasic[]};
+  lessNumCasesChart: {width: number, data: DataBasic[]};
+}
+
+interface Props {
+  data: Info[];
+  setPickedData: (data: Info) => any;
+}
+
+class ChartsMain extends React.Component<Props, State> {
+  ref: RefObject<HTMLDivElement> = React.createRef();
+
+  constructor(props: Props) {
     super(props);
-    this.ref = React.createRef();
     this.state = {
       loading: true,
       mostNumCasesChart: {
@@ -25,11 +37,11 @@ class ChartsMain extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
       const width = this._getWidth();
-      const dataMost = this.props.data.filter(el => (el.cases > 100000 || el.country === 'Poland'));
-      const dataLess = this.props.data.filter(el => (el.cases < 3000 || el.country === 'Poland'));
+      const dataMost = this.props.data.filter((el: Info) => (el.cases > 100000 || el.country === 'Poland')).map((el: Info) => ({name: el.country, value: el.cases}));
+      const dataLess = this.props.data.filter((el: Info) => (el.cases < 3000 || el.country === 'Poland')).map((el: Info) => ({name: el.country, value: el.cases}));
 
       this.setState({
         ...this.state,
@@ -48,10 +60,15 @@ class ChartsMain extends React.Component {
 
   _getWidth() {
     if (!getComputedStyle) { alert('Not supported'); }
-    const computedStyle = getComputedStyle(this.ref.current);
-    var width = this.ref.current.clientWidth;
+    const computedStyle = getComputedStyle(this.ref.current as Element);
+    var width = this.ref?.current?.clientWidth || 0;
     width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
     return width;
+  }
+
+  setPickedData(name: string) {
+    const data: Info = this.props.data.find((el: Info) => (el.country === name)) as Info;
+    this.props.setPickedData(data);
   }
 
   render() {
@@ -61,15 +78,15 @@ class ChartsMain extends React.Component {
         <header className="charts-main__header">Most numerous countries</header>
         <BarChart
           classSvgName="charts-main__svg-bar"
-          setPickedData={this.props.setPickedData}
+          setPickedData={(name: string) => this.setPickedData(name)}
           width={this.state.mostNumCasesChart.width}
           data={this.state.mostNumCasesChart.data}
-          ranges={colorRanges}
+          rangeColor={rangesConfig}
         ></BarChart>
         <header className="charts-main__header">Less numerous countries</header>
         <PieChart
           classSvgName="charts-main__svg-pie"
-          setPickedData={this.props.setPickedData}
+          setPickedData={(name: string) => this.setPickedData(name)}
           width={this.state.lessNumCasesChart.width}
           data={this.state.lessNumCasesChart.data}
         ></PieChart>

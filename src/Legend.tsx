@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Legend.scss';
 
-const getBackgroundcolor = (color) => {
+function getBackgroundcolor(color: string) {
   return {backgroundColor: color};
 }
 

@@ -1,7 +1,7 @@
 import { RangeConfig } from 'charts';
 
 
-export const mostCommonColor = '#500000';
+export const mostCommonColor: string = '#500000';
 
 export const rangesConfigCases: RangeConfig = {
   ranges: [

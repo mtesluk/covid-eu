@@ -1,6 +1,6 @@
 import { RangeConfig } from './interfaces';
 
-export const manageColors = (amount: number, colors: RangeConfig | string) => {
+export function manageColors(amount: number, colors: RangeConfig | string): string {
   if (!(colors instanceof Object)) {
     return colors;
   }

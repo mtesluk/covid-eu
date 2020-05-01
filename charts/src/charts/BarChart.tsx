@@ -18,17 +18,17 @@ interface Props extends PropsBasic {
 class BarChart extends React.Component<Props, State> {
 
   componentDidMount() {
-    const width = this.props.width;
-    const height = 4/5 * width;
-    const data = this.props.data;
+    const width: number = this.props.width;
+    const height: number = 4/5 * width;
+    const data: DataBasic[] = this.props.data;
     this._prepareChart(height, width, data, this.props.colors);
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
-      const width = this.props.width;
-      const height = 4/5 * width;
-      const data = this.props.data;
+      const width: number = this.props.width;
+      const height: number = 4/5 * width;
+      const data: DataBasic[] = this.props.data;
       this._prepareChart(height, width, data, this.props.colors);
     }
   }

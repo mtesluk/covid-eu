@@ -2,11 +2,16 @@ import React from 'react';
 
 import './Legend.scss';
 
-function getBackgroundcolor(color: string) {
+
+function getBackgroundcolor(color: string): {backgroundColor: string} {
   return {backgroundColor: color};
 }
 
-const Legend = (props) => {
+interface Props {
+
+}
+
+const Legend = (props: Props) => {
   return (
     <div className="legend">
       <h3>Legend</h3>

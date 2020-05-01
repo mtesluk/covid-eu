@@ -17,38 +17,34 @@ interface State {
 
 interface Props {
   data: Info[];
-  setPickedData: (data: Info) => any;
+  setPickedData: (data: Info) => void;
 }
 
 class ChartsExtra extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
   additionalCountries: string[] = ['Poland'];
-
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      loading: true,
-      mostNumCasesPerMillionChart: {
-        width: 0,
-        data: []
-      },
-      mostNumDeathsPerMillionChart: {
-        width: 0,
-        data: []
-      },
-      mostNumTestsPerMillionChart: {
-        width: 0,
-        data: []
-      },
-    };
-  }
+  state: State = {
+    loading: true,
+    mostNumCasesPerMillionChart: {
+      width: 0,
+      data: []
+    },
+    mostNumDeathsPerMillionChart: {
+      width: 0,
+      data: []
+    },
+    mostNumTestsPerMillionChart: {
+      width: 0,
+      data: []
+    },
+  };
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
-      const width = getWidth(this.ref.current);
-      const dataMostDeaths = mapDataToInfo(this.props.data, 'deathsPerOneMillion', (el: Info) => (el.deathsPerOneMillion > 300 || this.additionalCountries.includes(el.country)));
-      const dataMostTests = mapDataToInfo(this.props.data, 'testsPerOneMillion', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
-      const dataMostCases = mapDataToInfo(this.props.data, 'casesPerOneMillion', (el: Info) => (el.casesPerOneMillion > 4000 || this.additionalCountries.includes(el.country)));
+      const width: number = getWidth(this.ref.current);
+      const dataMostDeaths: DataBasic[] = mapDataToInfo(this.props.data, 'deathsPerOneMillion', (el: Info) => (el.deathsPerOneMillion > 300 || this.additionalCountries.includes(el.country)));
+      const dataMostTests: DataBasic[] = mapDataToInfo(this.props.data, 'testsPerOneMillion', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
+      const dataMostCases: DataBasic[] = mapDataToInfo(this.props.data, 'casesPerOneMillion', (el: Info) => (el.casesPerOneMillion > 4000 || this.additionalCountries.includes(el.country)));
 
       this.setState({
         ...this.state,

@@ -15,11 +15,8 @@ interface Props {
 }
 
 class Info extends React.Component<Props, State> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      extraClass: '',
-    }
+  state = {
+    extraClass: '',
   }
 
   componentDidUpdate(prevProps: Props) {

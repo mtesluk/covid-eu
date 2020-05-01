@@ -15,17 +15,17 @@ interface Props extends PropsBasic {
 
 class PieChart extends React.Component<Props, State> {
   componentDidMount() {
+    const data: DataBasic[] = this.props.data;
     const width: number = this.props.width;
     const height: number = 4/5 * width;
-    const data = this.props.data;
     this._prepareChart(height, width, data);
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
-      const data = this.props.data;
-      const width = this.props.width;
-      const height = Math.min(width, 500)
+      const data: DataBasic[] = this.props.data;
+      const width: number = this.props.width;
+      const height: number = 4/5 * width;
       this._prepareChart(height, width, data);
     }
   }

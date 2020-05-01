@@ -23,27 +23,23 @@ interface Props {
 class ChartsMain extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
   additionalCountries: string[] = ['Poland'];
-
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      loading: true,
-      mostNumCasesChart: {
-        width: 0,
-        data: []
-      },
-      mostNumDeathsChart: {
-        width: 0,
-        data: []
-      },
-    };
-  }
+  state = {
+    loading: true,
+    mostNumCasesChart: {
+      width: 0,
+      data: []
+    },
+    mostNumDeathsChart: {
+      width: 0,
+      data: []
+    },
+  };
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
-      const width = getWidth(this.ref.current);
-      const dataMost = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
-      const dataMostDeaths = mapDataToInfo(this.props.data, 'deaths', (el: Info) => (el.deaths > 20000 || this.additionalCountries.includes(el.country)));
+      const width: number = getWidth(this.ref.current);
+      const dataMost: DataBasic[] = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
+      const dataMostDeaths: DataBasic[] = mapDataToInfo(this.props.data, 'deaths', (el: Info) => (el.deaths > 20000 || this.additionalCountries.includes(el.country)));
 
       this.setState({
         ...this.state,

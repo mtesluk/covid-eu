@@ -7,14 +7,14 @@ import axios from 'axios';
 import * as d3 from 'd3';
 import { rangesConfigCases } from '../shared/config';
 import { manageColors } from 'charts';
-import { FeatureCollection } from 'geojson';
+import { FeatureCollection, GeoJsonProperties } from 'geojson';
 import { Info } from '../shared/interfaces';
 import { getWidth } from '../shared/utils';
+import { GeoProjection, GeoPath } from 'd3';
 
 
 interface State {
   loading: boolean;
-  coronaData: {};
   width: number;
   endpoints: {[name: string]: string};
 }
@@ -24,46 +24,45 @@ interface Props {
   setAllData: (data: Info[]) => any;
 }
 
+interface InfoObj {
+  [countryName: string]: Info;
+}
+
 class Map extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-      coronaData: {},
-      width: 0,
-      endpoints: {
-        countries: "https://coronavirus-19-api.herokuapp.com/countries",
-        map: "./eu.json"
-      }
-    };
-  }
+  state = {
+    loading: true,
+    width: 0,
+    endpoints: {
+      countries: "https://coronavirus-19-api.herokuapp.com/countries",
+      map: "./eu.json"
+    }
+  };
 
   componentDidMount() {
     const width: number = getWidth(this.ref.current);
-
-    const height = 4/5 * width;
-    const projection = d3.geoMercator()
+    const height: number = 4/5 * width;
+    const projection: GeoProjection = d3.geoMercator()
                .translate([ width/4, height*1.6 ])
                .scale(width/1.1);
 
-    const path = d3.geoPath()
+    const path: GeoPath = d3.geoPath()
             .projection(projection);
 
     const svg = d3.select('.map__svg')
           .attr('width', width)
           .attr('height', height);
 
-    const promiseMap = d3.json(this.state.endpoints.map, {
+    const promiseMap: Promise<any> = d3.json(this.state.endpoints.map, {
       headers: { Accept: "application/json; odata=verbose"}
     });
-    const promiseData = axios.get(this.state.endpoints.countries);
-    Promise.all([promiseMap, promiseData]).then(dataArray => {
+    const promiseData: Promise<any> = axios.get(this.state.endpoints.countries);
+
+    Promise.all([promiseMap, promiseData]).then((dataArray: [FeatureCollection, {data: Info[]}]) => {
       const mapData: FeatureCollection = dataArray[0];
-      let countriesData = this._filterCountries(dataArray[1].data, mapData.features.map(feature => feature.properties));
+      const countriesData: Info[] = this._filterCountries(dataArray[1].data, mapData.features.map(feature => feature.properties));
       this.props.setAllData(countriesData);
-      countriesData = this._reduceCountries(countriesData);
+      const countriesDataObj: InfoObj = this._reduceCountries(countriesData);
 
       svg.selectAll('path')
         .data(mapData.features)
@@ -71,22 +70,22 @@ class Map extends React.Component<Props, State> {
         .append('path')
         .attr('d', path)
         .attr('fill', d => {
-          const countryName  = d.properties?.name;
-          var color = manageColors(countriesData[countryName]?.cases, rangesConfigCases)
+          const countryName: string  = d.properties?.name;
+          const color: string = manageColors(countriesDataObj[countryName]?.cases, rangesConfigCases)
           return color;
         })
-        .attr('stroke', d => 'red')
+        .attr('stroke', 'red')
         .on('mouseover', d => {
-          const countryName  = d.properties?.name;
+          const countryName: string  = d.properties?.name;
           this.props.setPickedData({
             country: countryName,
-            cases: countriesData[countryName]?.cases,
-            deaths: countriesData[countryName]?.deaths,
-            recovered: countriesData[countryName]?.recovered,
-            critical: countriesData[countryName]?.critical,
-            casesPerOneMillion: countriesData[countryName]?.casesPerOneMillion,
-            deathsPerOneMillion: countriesData[countryName]?.deathsPerOneMillion,
-            testsPerOneMillion: countriesData[countryName]?.testsPerOneMillion,
+            cases: countriesDataObj[countryName]?.cases,
+            deaths: countriesDataObj[countryName]?.deaths,
+            recovered: countriesDataObj[countryName]?.recovered,
+            critical: countriesDataObj[countryName]?.critical,
+            casesPerOneMillion: countriesDataObj[countryName]?.casesPerOneMillion,
+            deathsPerOneMillion: countriesDataObj[countryName]?.deathsPerOneMillion,
+            testsPerOneMillion: countriesDataObj[countryName]?.testsPerOneMillion,
           });
         });
 
@@ -94,21 +93,16 @@ class Map extends React.Component<Props, State> {
           ...this.state,
           loading: false
         });
-
-        this.setState({
-          ...this.state,
-          coronaData: countriesData
-        });
     });
   }
 
-  _filterCountries(countries, properties) {
-    const sovereignts = properties.map(property => property.sovereignt);
+  _filterCountries(countries: Info[], properties: GeoJsonProperties): Info[] {
+    const sovereignts: string[] = properties?.map(property => property?.sovereignt);
     countries = countries.filter(country => sovereignts.includes(country.country));
     return countries;
   }
 
-  _reduceCountries(countries) {
+  _reduceCountries(countries: Info[]): InfoObj {
     return countries.reduce((sum, val) => ({...sum, [val.country]: val}), {});
   }
 

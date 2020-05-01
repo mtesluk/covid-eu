@@ -4,14 +4,15 @@ import './ChartsExtra.scss';
 import { LinearProgress } from '@material-ui/core';
 
 import { BarChart, DataBasic } from 'charts';
-import { rangesConfigDeaths } from '../shared/config';
+import { rangesConfigTests, mostCommonColor } from '../shared/config';
 import { Info } from '../shared/interfaces';
 import { mapDataToInfo, getWidth } from '../shared/utils';
 
 interface State {
   loading: boolean;
-  mostNumDeathsChart: {width: number, data: DataBasic[]};
-  lessNumCasesChart: {width: number, data: DataBasic[]};
+  mostNumCasesPerMillionChart: {width: number, data: DataBasic[]};
+  mostNumDeathsPerMillionChart: {width: number, data: DataBasic[]};
+  mostNumTestsPerMillionChart: {width: number, data: DataBasic[]};
 }
 
 interface Props {
@@ -27,11 +28,15 @@ class ChartsExtra extends React.Component<Props, State> {
     super(props);
     this.state = {
       loading: true,
-      mostNumDeathsChart: {
+      mostNumCasesPerMillionChart: {
         width: 0,
         data: []
       },
-      lessNumCasesChart: {
+      mostNumDeathsPerMillionChart: {
+        width: 0,
+        data: []
+      },
+      mostNumTestsPerMillionChart: {
         width: 0,
         data: []
       },
@@ -41,18 +46,24 @@ class ChartsExtra extends React.Component<Props, State> {
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
       const width = getWidth(this.ref.current);
-      const dataMostDeaths = mapDataToInfo(this.props.data, 'deaths', (el: Info) => (el.deaths > 20000 || this.additionalCountries.includes(el.country)));
+      const dataMostDeaths = mapDataToInfo(this.props.data, 'deathsPerOneMillion', (el: Info) => (el.deathsPerOneMillion > 300 || this.additionalCountries.includes(el.country)));
+      const dataMostTests = mapDataToInfo(this.props.data, 'testsPerOneMillion', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
+      const dataMostCases = mapDataToInfo(this.props.data, 'casesPerOneMillion', (el: Info) => (el.casesPerOneMillion > 4000 || this.additionalCountries.includes(el.country)));
 
       this.setState({
         ...this.state,
         loading: false,
-        mostNumDeathsChart: {
+        mostNumCasesPerMillionChart: {
+          width,
+          data: dataMostCases
+        },
+        mostNumDeathsPerMillionChart: {
           width,
           data: dataMostDeaths
         },
-        lessNumCasesChart: {
+        mostNumTestsPerMillionChart: {
           width,
-          data: dataMostDeaths
+          data: dataMostTests
         },
       });
     }
@@ -67,13 +78,29 @@ class ChartsExtra extends React.Component<Props, State> {
     return (
       <div className="charts-extra" ref={this.ref}>
         {this.state.loading && <LinearProgress className="charts-extra__progress" color="secondary" />}
-        <header className="charts-extra__header">Most deaths</header>
+        <header className="charts-extra__header">Most tests per million</header>
         <BarChart
-          classSvgName="charts-extra__svg-bar"
+          classSvgName="charts-extra__svg-bar-tests"
           setPickedData={(name: string) => this.setPickedData(name)}
-          width={this.state.mostNumDeathsChart.width}
-          data={this.state.mostNumDeathsChart.data}
-          colors={rangesConfigDeaths}
+          width={this.state.mostNumTestsPerMillionChart.width}
+          data={this.state.mostNumTestsPerMillionChart.data}
+          colors={rangesConfigTests}
+        ></BarChart>
+        <header className="charts-extra__header">Most cases per million</header>
+        <BarChart
+          classSvgName="charts-extra__svg-bar-cases"
+          setPickedData={(name: string) => this.setPickedData(name)}
+          width={this.state.mostNumCasesPerMillionChart.width}
+          data={this.state.mostNumCasesPerMillionChart.data}
+          colors={mostCommonColor}
+        ></BarChart>
+        <header className="charts-extra__header">Most deaths per million</header>
+        <BarChart
+          classSvgName="charts-extra__svg-bar-deaths"
+          setPickedData={(name: string) => this.setPickedData(name)}
+          width={this.state.mostNumDeathsPerMillionChart.width}
+          data={this.state.mostNumDeathsPerMillionChart.data}
+          colors={mostCommonColor}
         ></BarChart>
       </div>
     )

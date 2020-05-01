@@ -12,7 +12,7 @@ import { mapDataToInfo, getWidth } from '../shared/utils';
 interface State {
   loading: boolean;
   mostNumCasesChart: {width: number, data: DataBasic[]};
-  lessNumCasesChart: {width: number, data: DataBasic[]};
+  mostNumDeathsChart: {width: number, data: DataBasic[]};
 }
 
 interface Props {
@@ -32,7 +32,7 @@ class ChartsMain extends React.Component<Props, State> {
         width: 0,
         data: []
       },
-      lessNumCasesChart: {
+      mostNumDeathsChart: {
         width: 0,
         data: []
       },
@@ -43,7 +43,7 @@ class ChartsMain extends React.Component<Props, State> {
     if (this.props.data !== prevProps.data) {
       const width = getWidth(this.ref.current);
       const dataMost = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
-      const dataLess = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases < 3000 || this.additionalCountries.includes(el.country)));
+      const dataMostDeaths = mapDataToInfo(this.props.data, 'deaths', (el: Info) => (el.deaths > 20000 || this.additionalCountries.includes(el.country)));
 
       this.setState({
         ...this.state,
@@ -52,9 +52,9 @@ class ChartsMain extends React.Component<Props, State> {
           width,
           data: dataMost
         },
-        lessNumCasesChart: {
+        mostNumDeathsChart: {
           width,
-          data: dataLess
+          data: dataMostDeaths
         },
       });
     }
@@ -77,12 +77,12 @@ class ChartsMain extends React.Component<Props, State> {
           data={this.state.mostNumCasesChart.data}
           colors={rangesConfigCases}
         ></BarChart>
-        <header className="charts-main__header">Less numerous countries</header>
+        <header className="charts-main__header">Most numerous deaths</header>
         <PieChart
           classSvgName="charts-main__svg-pie"
           setPickedData={(name: string) => this.setPickedData(name)}
-          width={this.state.lessNumCasesChart.width}
-          data={this.state.lessNumCasesChart.data}
+          width={this.state.mostNumDeathsChart.width}
+          data={this.state.mostNumDeathsChart.data}
         ></PieChart>
         <p className="charts-main__footer">Source: https://coronavirus-19-api.herokuapp.com/countries</p>
       </div>

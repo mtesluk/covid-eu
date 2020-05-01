@@ -49,6 +49,7 @@
 
     &__info {
         grid-area: info;
+        z-index: 10000;
 
         @media screen and (max-width: 800px) {
             position: sticky;

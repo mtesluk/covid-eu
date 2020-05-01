@@ -60,6 +60,9 @@ class PieChart extends React.Component<Props, State> {
       .join('path')
       .attr('fill', d => color((d.data as any).name) as any)
       .attr('d', arc as any)
+      .on('mouseover', d => {
+        this.props.setPickedData((d.data as any).name);
+      })
       .append('title')
       .text(d => `${(d.data as any).name}: ${(d.data as any).value.toLocaleString()}`);
 
@@ -70,14 +73,19 @@ class PieChart extends React.Component<Props, State> {
     .selectAll('text')
     .data(arcs)
     .join('text')
-      .attr('transform', d => `translate(${arcLabel.centroid(d as any)})`)
+    .attr('transform', (d: any) => {
+      d.innerRadius = 0;
+      d.outerRadius = 100;
+      var pos = arc.centroid(d);
+      return 'translate(' + pos + ')';
+  })
       .call(text => text.append('tspan')
-          .attr('y', '-0.4em')
+          .attr('y', '-0.4rem')
           .attr('font-weight', 'bold')
           .text((d: any) => d.data.name))
       .call(text => text.filter(d => (d.endAngle - d.startAngle) > 0.25).append("tspan")
           .attr('x', 0)
-          .attr('y', '0.7em')
+          .attr('y', '0.7rem')
           .attr('fill-opacity', 0.7)
           .text((d: any) => d.data.value.toLocaleString()));
   }

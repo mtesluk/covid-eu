@@ -65,7 +65,7 @@ class ChartsMain extends React.Component<Props, State> {
     return (
       <div className="charts-main" ref={this.ref}>
         {this.state.loading && <LinearProgress className="charts-main__progress" color="secondary" />}
-        <header className="charts-main__header">Most numerous countries</header>
+        <header className="charts-main__header">Most numerous cases</header>
         <BarChart
           classSvgName="charts-main__svg-bar"
           setPickedData={(name: string) => this.setPickedData(name)}

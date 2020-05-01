@@ -3,6 +3,10 @@
     display: flex;
     justify-content: space-evenly;
 
+    @media screen and (max-width: 800px) {
+        font-size: 1.5rem;
+    }
+
     &__anim {
         animation-name: my;
         animation-duration: 1s;

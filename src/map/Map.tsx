@@ -9,6 +9,7 @@ import { rangesConfigCases } from '../shared/config';
 import { manageColors } from 'charts';
 import { FeatureCollection } from 'geojson';
 import { Info } from '../shared/interfaces';
+import { getWidth } from '../shared/utils';
 
 
 interface State {
@@ -40,10 +41,7 @@ class Map extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    if (!getComputedStyle) { alert('Not supported'); }
-    const computedStyle = getComputedStyle(this.ref.current as Element);
-    var width = this.ref.current?.clientWidth || 0;
-    width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
+    const width: number = getWidth(this.ref.current);
 
     const height = 4/5 * width;
     const projection = d3.geoMercator()

@@ -4,7 +4,7 @@ export function manageColors(amount: number, colors: RangeConfig | string): stri
   if (!(colors instanceof Object)) {
     return colors;
   }
-  for(var range of colors.ranges) {
+  for(let range of colors.ranges) {
     if (amount > range.min && amount < range.max) return range.color;
   }
   return colors.default;

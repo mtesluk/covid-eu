@@ -12,7 +12,7 @@ export function mapDataToInfo(data: Info[], selector: string, filterCallback: (e
 export function getWidth(current: HTMLDivElement | null): number {
     if (!getComputedStyle) { alert('Not supported'); }
     const computedStyle = getComputedStyle(current as Element);
-    var width = current?.clientWidth || 0;
+    let width = current?.clientWidth || 0;
     width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
     return width;
   }

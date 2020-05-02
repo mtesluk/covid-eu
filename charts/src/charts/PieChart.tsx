@@ -76,7 +76,7 @@ class PieChart extends React.Component<Props, State> {
     .attr('transform', (d: any) => {
       d.innerRadius = 0;
       d.outerRadius = 100;
-      var pos = arc.centroid(d);
+      let pos = arc.centroid(d);
       return 'translate(' + pos + ')';
   })
       .call(text => text.append('tspan')

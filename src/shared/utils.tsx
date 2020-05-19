@@ -2,9 +2,10 @@ import { DataBasic } from "charts";
 import { Info } from "./interfaces";
 
 
-export function mapDataToInfo(data: Info[], selector: string, filterCallback: (el: Info) => boolean): DataBasic[] {
-      data = filterCallback ? data.filter((el: Info) => filterCallback(el)) : data;
-      const mappedData: DataBasic[] = data.map((el: Info) => ({name: el.country, value: el[selector]}));
+export function mapInfoToData(data: Info[], selector: string, filterCallback: (el: Info) => boolean, slice: number | null = null): DataBasic[] {
+      const filteredData = filterCallback ? data.filter((el: Info) => filterCallback(el)) : data;
+      let mappedData: DataBasic[] = filteredData.map((el: Info) => ({name: el.country, value: el[selector]}));
+      if (slice) mappedData = mappedData.slice(0, slice);
       return mappedData;
 }
 
@@ -15,4 +16,4 @@ export function getWidth(current: HTMLDivElement | null): number {
     let width = current?.clientWidth || 0;
     width -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
     return width;
-  }
+}

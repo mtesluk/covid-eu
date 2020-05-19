@@ -6,7 +6,7 @@ import { LinearProgress } from '@material-ui/core';
 import { BarChart, PieChart, DataBasic } from 'charts';
 import { mostCommonColor } from '../shared/config';
 import { Info } from '../shared/interfaces';
-import { mapDataToInfo, getWidth } from '../shared/utils';
+import { mapInfoToData, getWidth } from '../shared/utils';
 
 
 interface State {
@@ -23,6 +23,7 @@ interface Props {
 class ChartsMain extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
   additionalCountries: string[] = ['Poland'];
+  amountOfShowingCountries: number = 6;
   state = {
     loading: true,
     mostNumCasesChart: {
@@ -37,9 +38,14 @@ class ChartsMain extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
+      const amount = this.amountOfShowingCountries - this.additionalCountries.length;
       const width: number = getWidth(this.ref.current);
-      const dataMost: DataBasic[] = mapDataToInfo(this.props.data, 'cases', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
-      const dataMostDeaths: DataBasic[] = mapDataToInfo(this.props.data, 'deaths', (el: Info) => (el.deaths > 20000 || this.additionalCountries.includes(el.country)));
+      let dataMost: DataBasic[] = mapInfoToData(this.props.data, 'cases', (el: Info) => el.cases > 100000, amount);
+      let dataMostDeaths: DataBasic[] = mapInfoToData(this.props.data, 'deaths', (el: Info) => el.deaths > 20000, amount);
+      const dataMostAdditionalCountries: DataBasic[] = mapInfoToData(this.props.data, 'cases', (el: Info) => this.additionalCountries.includes(el.country));
+      const dataMostDeathsAdditionalCountries: DataBasic[] = mapInfoToData(this.props.data, 'deaths', (el: Info) => this.additionalCountries.includes(el.country));
+      dataMost = dataMost.concat(dataMostAdditionalCountries);
+      dataMostDeaths = dataMostDeaths.concat(dataMostDeathsAdditionalCountries);
 
       this.setState({
         ...this.state,

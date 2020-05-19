@@ -6,7 +6,7 @@ import { LinearProgress } from '@material-ui/core';
 import { BarChart, DataBasic } from 'charts';
 import { mostCommonColor } from '../shared/config';
 import { Info } from '../shared/interfaces';
-import { mapDataToInfo, getWidth } from '../shared/utils';
+import { mapInfoToData, getWidth } from '../shared/utils';
 
 interface State {
   loading: boolean;
@@ -23,6 +23,7 @@ interface Props {
 class ChartsExtra extends React.Component<Props, State> {
   ref: RefObject<HTMLDivElement> = React.createRef();
   additionalCountries: string[] = ['Poland'];
+  amountOfShowingCountries: number = 5;
   state: State = {
     loading: true,
     mostNumCasesPerMillionChart: {
@@ -41,10 +42,17 @@ class ChartsExtra extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.data !== prevProps.data) {
+      const amount = this.amountOfShowingCountries - this.additionalCountries.length;
       const width: number = getWidth(this.ref.current);
-      const dataMostDeaths: DataBasic[] = mapDataToInfo(this.props.data, 'deathsPerOneMillion', (el: Info) => (el.deathsPerOneMillion > 300 || this.additionalCountries.includes(el.country)));
-      const dataMostTests: DataBasic[] = mapDataToInfo(this.props.data, 'testsPerOneMillion', (el: Info) => (el.cases > 100000 || this.additionalCountries.includes(el.country)));
-      const dataMostCases: DataBasic[] = mapDataToInfo(this.props.data, 'casesPerOneMillion', (el: Info) => (el.casesPerOneMillion > 4000 || this.additionalCountries.includes(el.country)));
+      let dataMostDeaths: DataBasic[] = mapInfoToData(this.props.data, 'deathsPerOneMillion', (el: Info) => el.deathsPerOneMillion > 300, amount);
+      let dataMostTests: DataBasic[] = mapInfoToData(this.props.data, 'testsPerOneMillion', (el: Info) => el.cases > 100000, amount);
+      let dataMostCases: DataBasic[] = mapInfoToData(this.props.data, 'casesPerOneMillion', (el: Info) => el.casesPerOneMillion > 4000, amount);
+      const dataMostDeathsAdditionalCountries: DataBasic[] = mapInfoToData(this.props.data, 'deathsPerOneMillion', (el: Info) => this.additionalCountries.includes(el.country));
+      const dataMostTestsAdditionalCountries: DataBasic[] = mapInfoToData(this.props.data, 'testsPerOneMillion', (el: Info) => this.additionalCountries.includes(el.country));
+      const dataMostCasesAdditionalCountries: DataBasic[] = mapInfoToData(this.props.data, 'casesPerOneMillion', (el: Info) => this.additionalCountries.includes(el.country));
+      dataMostDeaths = dataMostDeaths.concat(dataMostDeathsAdditionalCountries);
+      dataMostTests = dataMostTests.concat(dataMostTestsAdditionalCountries);
+      dataMostCases = dataMostCases.concat(dataMostCasesAdditionalCountries);
 
       this.setState({
         ...this.state,

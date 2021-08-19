@@ -19,9 +19,9 @@ export const rangesConfigDeaths: RangeConfig = {
   ranges: [
     {min: 0, max: 10000, color: '#fff1d9'},
     {min: 10001, max: 50000, color: '#fdcd8b'},
-    {min: 301, max: 70000, color: '#b55440'},
-    {min: 3001, max: 90000, color: '#b53828'},
-    {min: 30001, max: 900000, color: mostCommonColor},
+    {min: 50001, max: 100000, color: '#b55440'},
+    {min: 100001, max: 150000, color: '#b53828'},
+    {min: 150001, max: 200000, color: mostCommonColor},
   ],
   default: '#000',
 };
@@ -30,10 +30,10 @@ export const rangesConfigDeaths: RangeConfig = {
 export const rangesConfigTests: RangeConfig = {
   ranges: [
     {min: 0, max: 7000, color: '#fff1d9'},
-    {min: 7001, max: 10000, color: '#fdcd8b'},
-    {min: 10001, max: 20000, color: '#b55440'},
-    {min: 20001, max: 30000, color: '#b53828'},
-    {min: 30001, max: 200000, color: mostCommonColor},
+    {min: 7001, max: 50000, color: '#fdcd8b'},
+    {min: 50001, max: 100000, color: '#b55440'},
+    {min: 100001, max: 200000, color: '#b53828'},
+    {min: 200001, max: 300000, color: mostCommonColor},
   ],
   default: '#000',
 };

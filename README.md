@@ -9,7 +9,7 @@ Writeen in React(Typescipt) and Scss.
 
 [Main view](/docs/app.png)
 
-[Mobile view](docs/app_mobile.jpg)
+[Mobile view](/docs/app_mobile.jpg)
 
 ## Prod
 [http://mtesluk.github.io/covid-eu](http://mtesluk.github.io/covid-eu)

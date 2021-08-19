@@ -30,6 +30,7 @@ In charts dir:
 npm run build
 ```
 
+In root dir:
 ```
 npm run deploy
 ```

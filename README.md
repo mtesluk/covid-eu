@@ -7,7 +7,7 @@ App is responsive and progressive.
 Deployed in Github-Pages.
 Writeen in React(Typescipt) and Scss.
 
-[Main view](docs/app.jpg)
+[Main view](docs/app.png)
 
 [Mobile view](docs/app_mobile.jpg)
 

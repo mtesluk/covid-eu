@@ -7,7 +7,7 @@ App is responsive and progressive.
 Deployed in Github-Pages.
 Writeen in React(Typescipt) and Scss.
 
-[Main view](docs/app.png)
+[Main view](https://github.com/mtesluk/covid-eu/blob/master/docs/app.png)
 
 [Mobile view](docs/app_mobile.jpg)
 

@@ -1,0 +1,1382 @@
+{"data": [
+    {
+        "country": "Indonesia",
+        "cases": 58672337,
+        "deaths": 2853077,
+        "recovered": 5398422,
+        "critical": 2052,
+        "casesPerOneMillion": 74328,
+        "deathsPerOneMillion": 9259,
+        "testsPerOneMillion": 8403482
+    },
+    {
+        "country": "Thailand",
+        "cases": 5343048,
+        "deaths": 2953014,
+        "recovered": 6505931,
+        "critical": 9638,
+        "casesPerOneMillion": 80765,
+        "deathsPerOneMillion": 8376,
+        "testsPerOneMillion": 3741032
+    },
+    {
+        "country": "Mexico",
+        "cases": 61832229,
+        "deaths": 3100421,
+        "recovered": 2082606,
+        "critical": 7331,
+        "casesPerOneMillion": 222,
+        "deathsPerOneMillion": 6913,
+        "testsPerOneMillion": 2307747
+    },
+    {
+        "country": "Ireland",
+        "cases": 42532399,
+        "deaths": 1740119,
+        "recovered": 7890246,
+        "critical": 6966,
+        "casesPerOneMillion": 38996,
+        "deathsPerOneMillion": 971,
+        "testsPerOneMillion": 4969155
+    },
+    {
+        "country": "Greece",
+        "cases": 77306650,
+        "deaths": 6416085,
+        "recovered": 8411497,
+        "critical": 4761,
+        "casesPerOneMillion": 2615,
+        "deathsPerOneMillion": 1317,
+        "testsPerOneMillion": 4368671
+    },
+    {
+        "country": "China",
+        "cases": 6874472,
+        "deaths": 4765908,
+        "recovered": 8825904,
+        "critical": 3197,
+        "casesPerOneMillion": 61815,
+        "deathsPerOneMillion": 3912,
+        "testsPerOneMillion": 8796858
+    },
+    {
+        "country": "Czech Republic",
+        "cases": 12478539,
+        "deaths": 9477433,
+        "recovered": 3678623,
+        "critical": 9946,
+        "casesPerOneMillion": 48895,
+        "deathsPerOneMillion": 6786,
+        "testsPerOneMillion": 8572967
+    },
+    {
+        "country": "Argentina",
+        "cases": 5773217,
+        "deaths": 5477621,
+        "recovered": 2624544,
+        "critical": 8579,
+        "casesPerOneMillion": 99566,
+        "deathsPerOneMillion": 3953,
+        "testsPerOneMillion": 9580535
+    },
+    {
+        "country": "Brazil",
+        "cases": 60471696,
+        "deaths": 5227167,
+        "recovered": 5414428,
+        "critical": 5938,
+        "casesPerOneMillion": 25210,
+        "deathsPerOneMillion": 2392,
+        "testsPerOneMillion": 9600136
+    },
+    {
+        "country": "Canada",
+        "cases": 60004684,
+        "deaths": 3928426,
+        "recovered": 9807532,
+        "critical": 9642,
+        "casesPerOneMillion": 79924,
+        "deathsPerOneMillion": 211,
+        "testsPerOneMillion": 360074
+    },
+    {
+        "country": "Swaziland",
+        "cases": 84936202,
+        "deaths": 6496334,
+        "recovered": 1183626,
+        "critical": 9635,
+        "casesPerOneMillion": 77384,
+        "deathsPerOneMillion": 4276,
+        "testsPerOneMillion": 3756428
+    },
+    {
+        "country": "Philippines",
+        "cases": 63783205,
+        "deaths": 3716812,
+        "recovered": 1976251,
+        "critical": 3576,
+        "casesPerOneMillion": 60580,
+        "deathsPerOneMillion": 6074,
+        "testsPerOneMillion": 2038121
+    },
+    {
+        "country": "Russia",
+        "cases": 77372272,
+        "deaths": 3291851,
+        "recovered": 2167836,
+        "critical": 5561,
+        "casesPerOneMillion": 39216,
+        "deathsPerOneMillion": 1688,
+        "testsPerOneMillion": 1030153
+    },
+    {
+        "country": "Peru",
+        "cases": 65119969,
+        "deaths": 5494970,
+        "recovered": 2054478,
+        "critical": 3264,
+        "casesPerOneMillion": 83178,
+        "deathsPerOneMillion": 9464,
+        "testsPerOneMillion": 4070242
+    },
+    {
+        "country": "Finland",
+        "cases": 34949500,
+        "deaths": 5208176,
+        "recovered": 3485605,
+        "critical": 2932,
+        "casesPerOneMillion": 52122,
+        "deathsPerOneMillion": 4374,
+        "testsPerOneMillion": 886369
+    },
+    {
+        "country": "Croatia",
+        "cases": 86857632,
+        "deaths": 4673604,
+        "recovered": 7387582,
+        "critical": 3576,
+        "casesPerOneMillion": 25318,
+        "deathsPerOneMillion": 3729,
+        "testsPerOneMillion": 5668893
+    },
+    {
+        "country": "Slovenia",
+        "cases": 98913033,
+        "deaths": 5314229,
+        "recovered": 6933343,
+        "critical": 7927,
+        "casesPerOneMillion": 56646,
+        "deathsPerOneMillion": 4092,
+        "testsPerOneMillion": 7344399
+    },
+    {
+        "country": "Sweden",
+        "cases": 96427643,
+        "deaths": 8845236,
+        "recovered": 8522632,
+        "critical": 1534,
+        "casesPerOneMillion": 94327,
+        "deathsPerOneMillion": 1026,
+        "testsPerOneMillion": 3699060
+    },
+    {
+        "country": "Serbia",
+        "cases": 25713031,
+        "deaths": 1917846,
+        "recovered": 3715046,
+        "critical": 2880,
+        "casesPerOneMillion": 79767,
+        "deathsPerOneMillion": 6531,
+        "testsPerOneMillion": 8937905
+    },
+    {
+        "country": "Spain",
+        "cases": 42146319,
+        "deaths": 9566581,
+        "recovered": 6397408,
+        "critical": 5362,
+        "casesPerOneMillion": 99492,
+        "deathsPerOneMillion": 9846,
+        "testsPerOneMillion": 9737045
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "cases": 70178855,
+        "deaths": 3583833,
+        "recovered": 4218332,
+        "critical": 7350,
+        "casesPerOneMillion": 98189,
+        "deathsPerOneMillion": 5287,
+        "testsPerOneMillion": 4384404
+    },
+    {
+        "country": "Ukraine",
+        "cases": 7132509,
+        "deaths": 9181650,
+        "recovered": 8063772,
+        "critical": 166,
+        "casesPerOneMillion": 21354,
+        "deathsPerOneMillion": 2737,
+        "testsPerOneMillion": 6231689
+    },
+    {
+        "country": "Lesotho",
+        "cases": 31307218,
+        "deaths": 7068963,
+        "recovered": 1397993,
+        "critical": 8749,
+        "casesPerOneMillion": 88691,
+        "deathsPerOneMillion": 1520,
+        "testsPerOneMillion": 3876794
+    },
+    {
+        "country": "Tunisia",
+        "cases": 27675087,
+        "deaths": 3005947,
+        "recovered": 5872391,
+        "critical": 5996,
+        "casesPerOneMillion": 27390,
+        "deathsPerOneMillion": 1335,
+        "testsPerOneMillion": 6496308
+    },
+    {
+        "country": "Colombia",
+        "cases": 94238463,
+        "deaths": 9214661,
+        "recovered": 780985,
+        "critical": 7343,
+        "casesPerOneMillion": 42072,
+        "deathsPerOneMillion": 7397,
+        "testsPerOneMillion": 8629207
+    },
+    {
+        "country": "Rwanda",
+        "cases": 37621200,
+        "deaths": 9438854,
+        "recovered": 8080800,
+        "critical": 7646,
+        "casesPerOneMillion": 74336,
+        "deathsPerOneMillion": 4112,
+        "testsPerOneMillion": 4521586
+    },
+    {
+        "country": "Portugal",
+        "cases": 16289861,
+        "deaths": 4151594,
+        "recovered": 2937887,
+        "critical": 9114,
+        "casesPerOneMillion": 33013,
+        "deathsPerOneMillion": 2810,
+        "testsPerOneMillion": 9535262
+    },
+    {
+        "country": "Palestinian Territory",
+        "cases": 72537589,
+        "deaths": 7592367,
+        "recovered": 6343407,
+        "critical": 5053,
+        "casesPerOneMillion": 36055,
+        "deathsPerOneMillion": 5466,
+        "testsPerOneMillion": 7574574
+    },
+    {
+        "country": "Honduras",
+        "cases": 44960177,
+        "deaths": 6176508,
+        "recovered": 3702859,
+        "critical": 3651,
+        "casesPerOneMillion": 6753,
+        "deathsPerOneMillion": 3105,
+        "testsPerOneMillion": 9702156
+    },
+    {
+        "country": "Israel",
+        "cases": 74311014,
+        "deaths": 7171118,
+        "recovered": 9607330,
+        "critical": 3598,
+        "casesPerOneMillion": 16033,
+        "deathsPerOneMillion": 3600,
+        "testsPerOneMillion": 4353926
+    },
+    {
+        "country": "Dominican Republic",
+        "cases": 25893172,
+        "deaths": 9912251,
+        "recovered": 3505770,
+        "critical": 9016,
+        "casesPerOneMillion": 17301,
+        "deathsPerOneMillion": 4790,
+        "testsPerOneMillion": 8756657
+    },
+    {
+        "country": "Syria",
+        "cases": 42783515,
+        "deaths": 8612061,
+        "recovered": 2963372,
+        "critical": 4363,
+        "casesPerOneMillion": 54249,
+        "deathsPerOneMillion": 7597,
+        "testsPerOneMillion": 3293174
+    },
+    {
+        "country": "Poland",
+        "cases": 88870431,
+        "deaths": 7110491,
+        "recovered": 1341955,
+        "critical": 7766,
+        "casesPerOneMillion": 30898,
+        "deathsPerOneMillion": 8652,
+        "testsPerOneMillion": 2054483
+    },
+    {
+        "country": "United Kingdom",
+        "cases": 80101640,
+        "deaths": 5969228,
+        "recovered": 4685855,
+        "critical": 2555,
+        "casesPerOneMillion": 72510,
+        "deathsPerOneMillion": 5311,
+        "testsPerOneMillion": 1671778
+    },
+    {
+        "country": "Kazakhstan",
+        "cases": 19773399,
+        "deaths": 1744777,
+        "recovered": 3291683,
+        "critical": 4790,
+        "casesPerOneMillion": 45904,
+        "deathsPerOneMillion": 9960,
+        "testsPerOneMillion": 2278215
+    },
+    {
+        "country": "Mongolia",
+        "cases": 46023275,
+        "deaths": 3841366,
+        "recovered": 8121176,
+        "critical": 3111,
+        "casesPerOneMillion": 49336,
+        "deathsPerOneMillion": 1560,
+        "testsPerOneMillion": 6014688
+    },
+    {
+        "country": "Uzbekistan",
+        "cases": 42586468,
+        "deaths": 1080251,
+        "recovered": 5882258,
+        "critical": 2600,
+        "casesPerOneMillion": 56286,
+        "deathsPerOneMillion": 3692,
+        "testsPerOneMillion": 7146761
+    },
+    {
+        "country": "Venezuela",
+        "cases": 84652534,
+        "deaths": 9644608,
+        "recovered": 2466968,
+        "critical": 1644,
+        "casesPerOneMillion": 77072,
+        "deathsPerOneMillion": 8631,
+        "testsPerOneMillion": 4517067
+    },
+    {
+        "country": "Albania",
+        "cases": 9935282,
+        "deaths": 3695996,
+        "recovered": 88538,
+        "critical": 390,
+        "casesPerOneMillion": 19407,
+        "deathsPerOneMillion": 5770,
+        "testsPerOneMillion": 9954430
+    },
+    {
+        "country": "North Korea",
+        "cases": 6038176,
+        "deaths": 1230666,
+        "recovered": 6195842,
+        "critical": 6698,
+        "casesPerOneMillion": 73774,
+        "deathsPerOneMillion": 9167,
+        "testsPerOneMillion": 8177016
+    },
+    {
+        "country": "Australia",
+        "cases": 10696307,
+        "deaths": 9384458,
+        "recovered": 9080109,
+        "critical": 4565,
+        "casesPerOneMillion": 56506,
+        "deathsPerOneMillion": 7663,
+        "testsPerOneMillion": 8564647
+    },
+    {
+        "country": "Armenia",
+        "cases": 83406617,
+        "deaths": 4816128,
+        "recovered": 3121037,
+        "critical": 6384,
+        "casesPerOneMillion": 62945,
+        "deathsPerOneMillion": 2162,
+        "testsPerOneMillion": 8633461
+    },
+    {
+        "country": "Norway",
+        "cases": 95977301,
+        "deaths": 2205349,
+        "recovered": 3114193,
+        "critical": 1622,
+        "casesPerOneMillion": 6278,
+        "deathsPerOneMillion": 1314,
+        "testsPerOneMillion": 2514268
+    },
+    {
+        "country": "Mauritius",
+        "cases": 88074320,
+        "deaths": 1052554,
+        "recovered": 4918654,
+        "critical": 9458,
+        "casesPerOneMillion": 4720,
+        "deathsPerOneMillion": 8869,
+        "testsPerOneMillion": 1156262
+    },
+    {
+        "country": "France",
+        "cases": 85348604,
+        "deaths": 2600028,
+        "recovered": 1332888,
+        "critical": 2978,
+        "casesPerOneMillion": 92436,
+        "deathsPerOneMillion": 3380,
+        "testsPerOneMillion": 1996373
+    },
+    {
+        "country": "Tanzania",
+        "cases": 16392379,
+        "deaths": 9935816,
+        "recovered": 3161139,
+        "critical": 5310,
+        "casesPerOneMillion": 83412,
+        "deathsPerOneMillion": 4769,
+        "testsPerOneMillion": 8461257
+    },
+    {
+        "country": "Cuba",
+        "cases": 61697461,
+        "deaths": 6895467,
+        "recovered": 4710009,
+        "critical": 9681,
+        "casesPerOneMillion": 20803,
+        "deathsPerOneMillion": 5279,
+        "testsPerOneMillion": 2493801
+    },
+    {
+        "country": "Netherlands",
+        "cases": 74940560,
+        "deaths": 15567,
+        "recovered": 5922004,
+        "critical": 5551,
+        "casesPerOneMillion": 5755,
+        "deathsPerOneMillion": 528,
+        "testsPerOneMillion": 7368793
+    },
+    {
+        "country": "Nigeria",
+        "cases": 95230589,
+        "deaths": 8050592,
+        "recovered": 4316557,
+        "critical": 3795,
+        "casesPerOneMillion": 67482,
+        "deathsPerOneMillion": 2805,
+        "testsPerOneMillion": 5485307
+    },
+    {
+        "country": "United States",
+        "cases": 86198844,
+        "deaths": 5360862,
+        "recovered": 7030211,
+        "critical": 3512,
+        "casesPerOneMillion": 91850,
+        "deathsPerOneMillion": 730,
+        "testsPerOneMillion": 5939590
+    },
+    {
+        "country": "Estonia",
+        "cases": 60200304,
+        "deaths": 8841298,
+        "recovered": 6782241,
+        "critical": 9046,
+        "casesPerOneMillion": 72220,
+        "deathsPerOneMillion": 8639,
+        "testsPerOneMillion": 133964
+    },
+    {
+        "country": "Myanmar",
+        "cases": 39430811,
+        "deaths": 2683044,
+        "recovered": 1271425,
+        "critical": 3757,
+        "casesPerOneMillion": 83912,
+        "deathsPerOneMillion": 3865,
+        "testsPerOneMillion": 1241027
+    },
+    {
+        "country": "Lithuania",
+        "cases": 91682444,
+        "deaths": 8259800,
+        "recovered": 4674248,
+        "critical": 2870,
+        "casesPerOneMillion": 56146,
+        "deathsPerOneMillion": 8437,
+        "testsPerOneMillion": 2348760
+    },
+    {
+        "country": "Vietnam",
+        "cases": 76339036,
+        "deaths": 2464351,
+        "recovered": 5219595,
+        "critical": 7026,
+        "casesPerOneMillion": 5705,
+        "deathsPerOneMillion": 5916,
+        "testsPerOneMillion": 8718411
+    },
+    {
+        "country": "Trinidad and Tobago",
+        "cases": 14154198,
+        "deaths": 4076314,
+        "recovered": 5851372,
+        "critical": 7669,
+        "casesPerOneMillion": 27261,
+        "deathsPerOneMillion": 1285,
+        "testsPerOneMillion": 7155677
+    },
+    {
+        "country": "Kenya",
+        "cases": 2900266,
+        "deaths": 6508869,
+        "recovered": 4835040,
+        "critical": 3457,
+        "casesPerOneMillion": 49064,
+        "deathsPerOneMillion": 5691,
+        "testsPerOneMillion": 3648053
+    },
+    {
+        "country": "Costa Rica",
+        "cases": 68577373,
+        "deaths": 3553373,
+        "recovered": 5649738,
+        "critical": 2455,
+        "casesPerOneMillion": 64337,
+        "deathsPerOneMillion": 475,
+        "testsPerOneMillion": 63378
+    },
+    {
+        "country": "Cayman Islands",
+        "cases": 3268564,
+        "deaths": 6057687,
+        "recovered": 8833487,
+        "critical": 1197,
+        "casesPerOneMillion": 86581,
+        "deathsPerOneMillion": 2584,
+        "testsPerOneMillion": 9735090
+    },
+    {
+        "country": "Egypt",
+        "cases": 62626967,
+        "deaths": 6031510,
+        "recovered": 3793418,
+        "critical": 7992,
+        "casesPerOneMillion": 78513,
+        "deathsPerOneMillion": 4481,
+        "testsPerOneMillion": 9523581
+    },
+    {
+        "country": "Palau",
+        "cases": 81265249,
+        "deaths": 4651156,
+        "recovered": 5514140,
+        "critical": 2270,
+        "casesPerOneMillion": 84938,
+        "deathsPerOneMillion": 6612,
+        "testsPerOneMillion": 7156536
+    },
+    {
+        "country": "Liberia",
+        "cases": 79905187,
+        "deaths": 8324790,
+        "recovered": 4183811,
+        "critical": 2611,
+        "casesPerOneMillion": 28792,
+        "deathsPerOneMillion": 2427,
+        "testsPerOneMillion": 7526595
+    },
+    {
+        "country": "Dominica",
+        "cases": 18215507,
+        "deaths": 7039009,
+        "recovered": 2119472,
+        "critical": 3710,
+        "casesPerOneMillion": 68098,
+        "deathsPerOneMillion": 8924,
+        "testsPerOneMillion": 6555373
+    },
+    {
+        "country": "Japan",
+        "cases": 32868955,
+        "deaths": 8510900,
+        "recovered": 1163117,
+        "critical": 977,
+        "casesPerOneMillion": 38764,
+        "deathsPerOneMillion": 1876,
+        "testsPerOneMillion": 7913806
+    },
+    {
+        "country": "El Salvador",
+        "cases": 5036572,
+        "deaths": 9094719,
+        "recovered": 7222371,
+        "critical": 7573,
+        "casesPerOneMillion": 73406,
+        "deathsPerOneMillion": 5899,
+        "testsPerOneMillion": 5085258
+    },
+    {
+        "country": "Iran",
+        "cases": 91057665,
+        "deaths": 4487451,
+        "recovered": 9451804,
+        "critical": 763,
+        "casesPerOneMillion": 6889,
+        "deathsPerOneMillion": 3947,
+        "testsPerOneMillion": 5254007
+    },
+    {
+        "country": "South Korea",
+        "cases": 35665354,
+        "deaths": 9144862,
+        "recovered": 6748340,
+        "critical": 5449,
+        "casesPerOneMillion": 56643,
+        "deathsPerOneMillion": 3201,
+        "testsPerOneMillion": 1838528
+    },
+    {
+        "country": "Burkina Faso",
+        "cases": 57100706,
+        "deaths": 5551221,
+        "recovered": 1842860,
+        "critical": 1022,
+        "casesPerOneMillion": 42122,
+        "deathsPerOneMillion": 2429,
+        "testsPerOneMillion": 5440664
+    },
+    {
+        "country": "Pakistan",
+        "cases": 11761895,
+        "deaths": 2594454,
+        "recovered": 6264236,
+        "critical": 4186,
+        "casesPerOneMillion": 99972,
+        "deathsPerOneMillion": 1303,
+        "testsPerOneMillion": 813915
+    },
+    {
+        "country": "Bulgaria",
+        "cases": 60286532,
+        "deaths": 4226058,
+        "recovered": 933714,
+        "critical": 2785,
+        "casesPerOneMillion": 38243,
+        "deathsPerOneMillion": 4759,
+        "testsPerOneMillion": 4618789
+    },
+    {
+        "country": "Luxembourg",
+        "cases": 29037218,
+        "deaths": 2979920,
+        "recovered": 5390911,
+        "critical": 6421,
+        "casesPerOneMillion": 29314,
+        "deathsPerOneMillion": 6938,
+        "testsPerOneMillion": 6896497
+    },
+    {
+        "country": "Uruguay",
+        "cases": 15625015,
+        "deaths": 6954079,
+        "recovered": 3718127,
+        "critical": 7974,
+        "casesPerOneMillion": 99641,
+        "deathsPerOneMillion": 9532,
+        "testsPerOneMillion": 2399493
+    },
+    {
+        "country": "Equatorial Guinea",
+        "cases": 51388658,
+        "deaths": 9242685,
+        "recovered": 3748508,
+        "critical": 7647,
+        "casesPerOneMillion": 51261,
+        "deathsPerOneMillion": 6518,
+        "testsPerOneMillion": 9940356
+    },
+    {
+        "country": "Nicaragua",
+        "cases": 33167705,
+        "deaths": 2398635,
+        "recovered": 551652,
+        "critical": 2427,
+        "casesPerOneMillion": 72604,
+        "deathsPerOneMillion": 701,
+        "testsPerOneMillion": 4363902
+    },
+    {
+        "country": "Bolivia",
+        "cases": 31290132,
+        "deaths": 8028687,
+        "recovered": 5914813,
+        "critical": 8468,
+        "casesPerOneMillion": 41711,
+        "deathsPerOneMillion": 485,
+        "testsPerOneMillion": 4249856
+    },
+    {
+        "country": "Macedonia",
+        "cases": 69109523,
+        "deaths": 8671410,
+        "recovered": 1875551,
+        "critical": 6294,
+        "casesPerOneMillion": 26769,
+        "deathsPerOneMillion": 9402,
+        "testsPerOneMillion": 6464717
+    },
+    {
+        "country": "Haiti",
+        "cases": 50600489,
+        "deaths": 3352163,
+        "recovered": 5793539,
+        "critical": 8714,
+        "casesPerOneMillion": 27591,
+        "deathsPerOneMillion": 1805,
+        "testsPerOneMillion": 782258
+    },
+    {
+        "country": "Uganda",
+        "cases": 64292476,
+        "deaths": 1953243,
+        "recovered": 9320568,
+        "critical": 6309,
+        "casesPerOneMillion": 11332,
+        "deathsPerOneMillion": 6756,
+        "testsPerOneMillion": 1320137
+    },
+    {
+        "country": "Burundi",
+        "cases": 42391940,
+        "deaths": 5160097,
+        "recovered": 2269925,
+        "critical": 4515,
+        "casesPerOneMillion": 58672,
+        "deathsPerOneMillion": 262,
+        "testsPerOneMillion": 6636108
+    },
+    {
+        "country": "Comoros",
+        "cases": 18118986,
+        "deaths": 4641763,
+        "recovered": 3704607,
+        "critical": 6122,
+        "casesPerOneMillion": 66358,
+        "deathsPerOneMillion": 9416,
+        "testsPerOneMillion": 9257377
+    },
+    {
+        "country": "Malaysia",
+        "cases": 70587695,
+        "deaths": 9435335,
+        "recovered": 6867781,
+        "critical": 7634,
+        "casesPerOneMillion": 18805,
+        "deathsPerOneMillion": 571,
+        "testsPerOneMillion": 5822890
+    },
+    {
+        "country": "Yemen",
+        "cases": 41296023,
+        "deaths": 1800008,
+        "recovered": 5599344,
+        "critical": 9,
+        "casesPerOneMillion": 22288,
+        "deathsPerOneMillion": 1538,
+        "testsPerOneMillion": 5948569
+    },
+    {
+        "country": "South Africa",
+        "cases": 4001386,
+        "deaths": 3974624,
+        "recovered": 9195033,
+        "critical": 9934,
+        "casesPerOneMillion": 48647,
+        "deathsPerOneMillion": 307,
+        "testsPerOneMillion": 6046666
+    },
+    {
+        "country": "Libya",
+        "cases": 76395148,
+        "deaths": 7820636,
+        "recovered": 2941179,
+        "critical": 1364,
+        "casesPerOneMillion": 41821,
+        "deathsPerOneMillion": 378,
+        "testsPerOneMillion": 6993959
+    },
+    {
+        "country": "Saudi Arabia",
+        "cases": 42840024,
+        "deaths": 5180897,
+        "recovered": 3654183,
+        "critical": 8941,
+        "casesPerOneMillion": 83352,
+        "deathsPerOneMillion": 1529,
+        "testsPerOneMillion": 7162777
+    },
+    {
+        "country": "Georgia",
+        "cases": 16506427,
+        "deaths": 6109394,
+        "recovered": 2150622,
+        "critical": 3756,
+        "casesPerOneMillion": 30562,
+        "deathsPerOneMillion": 8184,
+        "testsPerOneMillion": 8864732
+    },
+    {
+        "country": "Latvia",
+        "cases": 75167435,
+        "deaths": 4188655,
+        "recovered": 7938623,
+        "critical": 2668,
+        "casesPerOneMillion": 77711,
+        "deathsPerOneMillion": 6552,
+        "testsPerOneMillion": 62834
+    },
+    {
+        "country": "Nepal",
+        "cases": 24634266,
+        "deaths": 4161507,
+        "recovered": 8500174,
+        "critical": 5797,
+        "casesPerOneMillion": 23550,
+        "deathsPerOneMillion": 3813,
+        "testsPerOneMillion": 583494
+    },
+    {
+        "country": "Afghanistan",
+        "cases": 38885300,
+        "deaths": 4344721,
+        "recovered": 8359710,
+        "critical": 2653,
+        "casesPerOneMillion": 16841,
+        "deathsPerOneMillion": 2877,
+        "testsPerOneMillion": 1288637
+    },
+    {
+        "country": "Kuwait",
+        "cases": 6972424,
+        "deaths": 1549276,
+        "recovered": 1871093,
+        "critical": 4576,
+        "casesPerOneMillion": 28110,
+        "deathsPerOneMillion": 7493,
+        "testsPerOneMillion": 3223364
+    },
+    {
+        "country": "Morocco",
+        "cases": 11532244,
+        "deaths": 5993678,
+        "recovered": 8186876,
+        "critical": 4530,
+        "casesPerOneMillion": 60651,
+        "deathsPerOneMillion": 6677,
+        "testsPerOneMillion": 9551485
+    },
+    {
+        "country": "Guatemala",
+        "cases": 73403792,
+        "deaths": 4740288,
+        "recovered": 4789858,
+        "critical": 2937,
+        "casesPerOneMillion": 14316,
+        "deathsPerOneMillion": 9143,
+        "testsPerOneMillion": 442848
+    },
+    {
+        "country": "Djibouti",
+        "cases": 11251261,
+        "deaths": 9025432,
+        "recovered": 8397943,
+        "critical": 1588,
+        "casesPerOneMillion": 72607,
+        "deathsPerOneMillion": 6730,
+        "testsPerOneMillion": 5575948
+    },
+    {
+        "country": "Guinea",
+        "cases": 79360744,
+        "deaths": 9409318,
+        "recovered": 7648399,
+        "critical": 5638,
+        "casesPerOneMillion": 60362,
+        "deathsPerOneMillion": 813,
+        "testsPerOneMillion": 55249
+    },
+    {
+        "country": "Zambia",
+        "cases": 17349418,
+        "deaths": 9931003,
+        "recovered": 3560554,
+        "critical": 3633,
+        "casesPerOneMillion": 90282,
+        "deathsPerOneMillion": 7833,
+        "testsPerOneMillion": 2480197
+    },
+    {
+        "country": "Zimbabwe",
+        "cases": 44072522,
+        "deaths": 9482657,
+        "recovered": 940785,
+        "critical": 447,
+        "casesPerOneMillion": 40437,
+        "deathsPerOneMillion": 4306,
+        "testsPerOneMillion": 7588887
+    },
+    {
+        "country": "Cyprus",
+        "cases": 18200038,
+        "deaths": 6723536,
+        "recovered": 3079858,
+        "critical": 5352,
+        "casesPerOneMillion": 1109,
+        "deathsPerOneMillion": 6148,
+        "testsPerOneMillion": 1525851
+    },
+    {
+        "country": "Sudan",
+        "cases": 54150763,
+        "deaths": 3121245,
+        "recovered": 9619521,
+        "critical": 7149,
+        "casesPerOneMillion": 85424,
+        "deathsPerOneMillion": 8264,
+        "testsPerOneMillion": 9921828
+    },
+    {
+        "country": "Germany",
+        "cases": 57870335,
+        "deaths": 7405084,
+        "recovered": 602432,
+        "critical": 1731,
+        "casesPerOneMillion": 46023,
+        "deathsPerOneMillion": 7026,
+        "testsPerOneMillion": 493699
+    },
+    {
+        "country": "Denmark",
+        "cases": 26475544,
+        "deaths": 4252926,
+        "recovered": 3059437,
+        "critical": 8692,
+        "casesPerOneMillion": 88432,
+        "deathsPerOneMillion": 1637,
+        "testsPerOneMillion": 8647485
+    },
+    {
+        "country": "Sierra Leone",
+        "cases": 66654437,
+        "deaths": 1249284,
+        "recovered": 1887571,
+        "critical": 7252,
+        "casesPerOneMillion": 47655,
+        "deathsPerOneMillion": 7966,
+        "testsPerOneMillion": 305784
+    },
+    {
+        "country": "Papua New Guinea",
+        "cases": 91817443,
+        "deaths": 5150601,
+        "recovered": 7748015,
+        "critical": 2651,
+        "casesPerOneMillion": 87764,
+        "deathsPerOneMillion": 4843,
+        "testsPerOneMillion": 1369162
+    },
+    {
+        "country": "Democratic Republic of the Congo",
+        "cases": 55400902,
+        "deaths": 9140387,
+        "recovered": 258888,
+        "critical": 7996,
+        "casesPerOneMillion": 79588,
+        "deathsPerOneMillion": 6920,
+        "testsPerOneMillion": 6061402
+    },
+    {
+        "country": "Turkmenistan",
+        "cases": 58087132,
+        "deaths": 4208742,
+        "recovered": 675369,
+        "critical": 9332,
+        "casesPerOneMillion": 17170,
+        "deathsPerOneMillion": 7455,
+        "testsPerOneMillion": 8536873
+    },
+    {
+        "country": "Kyrgyzstan",
+        "cases": 11802759,
+        "deaths": 6936531,
+        "recovered": 3950691,
+        "critical": 1179,
+        "casesPerOneMillion": 75482,
+        "deathsPerOneMillion": 4378,
+        "testsPerOneMillion": 3875687
+    },
+    {
+        "country": "Bangladesh",
+        "cases": 98686158,
+        "deaths": 2603161,
+        "recovered": 6362648,
+        "critical": 9168,
+        "casesPerOneMillion": 24491,
+        "deathsPerOneMillion": 7551,
+        "testsPerOneMillion": 2037619
+    },
+    {
+        "country": "Kosovo",
+        "cases": 58511267,
+        "deaths": 7170973,
+        "recovered": 1360988,
+        "critical": 1557,
+        "casesPerOneMillion": 25223,
+        "deathsPerOneMillion": 1237,
+        "testsPerOneMillion": 2196998
+    },
+    {
+        "country": "Qatar",
+        "cases": 76836283,
+        "deaths": 3682408,
+        "recovered": 6294066,
+        "critical": 3805,
+        "casesPerOneMillion": 37357,
+        "deathsPerOneMillion": 6123,
+        "testsPerOneMillion": 723554
+    },
+    {
+        "country": "Madagascar",
+        "cases": 57524813,
+        "deaths": 7498220,
+        "recovered": 2615160,
+        "critical": 3540,
+        "casesPerOneMillion": 96454,
+        "deathsPerOneMillion": 4682,
+        "testsPerOneMillion": 9940043
+    },
+    {
+        "country": "New Zealand",
+        "cases": 65840660,
+        "deaths": 7007610,
+        "recovered": 5559148,
+        "critical": 2248,
+        "casesPerOneMillion": 87174,
+        "deathsPerOneMillion": 8974,
+        "testsPerOneMillion": 1095185
+    },
+    {
+        "country": "Bahamas",
+        "cases": 42262401,
+        "deaths": 7039939,
+        "recovered": 3823924,
+        "critical": 406,
+        "casesPerOneMillion": 17579,
+        "deathsPerOneMillion": 1589,
+        "testsPerOneMillion": 8366636
+    },
+    {
+        "country": "Chile",
+        "cases": 32707306,
+        "deaths": 4905608,
+        "recovered": 942353,
+        "critical": 9709,
+        "casesPerOneMillion": 45175,
+        "deathsPerOneMillion": 6084,
+        "testsPerOneMillion": 9109531
+    },
+    {
+        "country": "Ecuador",
+        "cases": 78067582,
+        "deaths": 9317782,
+        "recovered": 6012864,
+        "critical": 8799,
+        "casesPerOneMillion": 48903,
+        "deathsPerOneMillion": 2297,
+        "testsPerOneMillion": 8942676
+    },
+    {
+        "country": "Hungary",
+        "cases": 57503423,
+        "deaths": 2764148,
+        "recovered": 8188616,
+        "critical": 8297,
+        "casesPerOneMillion": 70413,
+        "deathsPerOneMillion": 8716,
+        "testsPerOneMillion": 920643
+    },
+    {
+        "country": "Iraq",
+        "cases": 26668801,
+        "deaths": 4533120,
+        "recovered": 4785270,
+        "critical": 9479,
+        "casesPerOneMillion": 73491,
+        "deathsPerOneMillion": 2813,
+        "testsPerOneMillion": 3806982
+    },
+    {
+        "country": "Moldova",
+        "cases": 54027464,
+        "deaths": 952581,
+        "recovered": 4240694,
+        "critical": 155,
+        "casesPerOneMillion": 29107,
+        "deathsPerOneMillion": 960,
+        "testsPerOneMillion": 9772453
+    },
+    {
+        "country": "American Samoa",
+        "cases": 86753974,
+        "deaths": 1588140,
+        "recovered": 2174650,
+        "critical": 9559,
+        "casesPerOneMillion": 88146,
+        "deathsPerOneMillion": 9791,
+        "testsPerOneMillion": 6333210
+    },
+    {
+        "country": "Malawi",
+        "cases": 40811131,
+        "deaths": 7113165,
+        "recovered": 9297310,
+        "critical": 1753,
+        "casesPerOneMillion": 58087,
+        "deathsPerOneMillion": 9774,
+        "testsPerOneMillion": 808912
+    },
+    {
+        "country": "Ethiopia",
+        "cases": 2583227,
+        "deaths": 8985531,
+        "recovered": 3904684,
+        "critical": 3945,
+        "casesPerOneMillion": 6904,
+        "deathsPerOneMillion": 1892,
+        "testsPerOneMillion": 8765684
+    },
+    {
+        "country": "Cameroon",
+        "cases": 78871939,
+        "deaths": 9024055,
+        "recovered": 7056169,
+        "critical": 736,
+        "casesPerOneMillion": 60098,
+        "deathsPerOneMillion": 8577,
+        "testsPerOneMillion": 9423543
+    },
+    {
+        "country": "Reunion",
+        "cases": 22971180,
+        "deaths": 1798110,
+        "recovered": 6563869,
+        "critical": 3027,
+        "casesPerOneMillion": 48825,
+        "deathsPerOneMillion": 9281,
+        "testsPerOneMillion": 3132819
+    },
+    {
+        "country": "Panama",
+        "cases": 930461,
+        "deaths": 6050571,
+        "recovered": 1984052,
+        "critical": 6126,
+        "casesPerOneMillion": 56083,
+        "deathsPerOneMillion": 6542,
+        "testsPerOneMillion": 7504392
+    },
+    {
+        "country": "Ghana",
+        "cases": 58313014,
+        "deaths": 2728601,
+        "recovered": 2640822,
+        "critical": 8466,
+        "casesPerOneMillion": 30775,
+        "deathsPerOneMillion": 4626,
+        "testsPerOneMillion": 9618443
+    },
+    {
+        "country": "Suriname",
+        "cases": 81255591,
+        "deaths": 3218571,
+        "recovered": 8091694,
+        "critical": 7902,
+        "casesPerOneMillion": 66488,
+        "deathsPerOneMillion": 1837,
+        "testsPerOneMillion": 6333760
+    },
+    {
+        "country": "Mali",
+        "cases": 44058774,
+        "deaths": 2046880,
+        "recovered": 5765291,
+        "critical": 1843,
+        "casesPerOneMillion": 77207,
+        "deathsPerOneMillion": 5304,
+        "testsPerOneMillion": 6124671
+    },
+    {
+        "country": "Slovakia",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Italy",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "UK",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Iceland",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Romania",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Belarus",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Slovakia",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Austria",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Czechia",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Belgium",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "North Macedonia",
+        "cases": 449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Montenegro",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Switzerland",
+        "cases": 21449939,
+        "deaths": 2805335,
+        "recovered": 9349543,
+        "critical": 9471,
+        "casesPerOneMillion": 87321,
+        "deathsPerOneMillion": 5399,
+        "testsPerOneMillion": 8934515
+    },
+    {
+        "country": "Angola",
+        "cases": 90668141,
+        "deaths": 6652868,
+        "recovered": 3004834,
+        "critical": 7389,
+        "casesPerOneMillion": 74245,
+        "deathsPerOneMillion": 3493,
+        "testsPerOneMillion": 3762326
+    }
+]}

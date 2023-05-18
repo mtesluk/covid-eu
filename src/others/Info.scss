@@ -1,7 +1,7 @@
 .info {
     font-size: 2rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     @media screen and (max-width: 1200px) {
         height: 100%;
@@ -11,16 +11,5 @@
     @media screen and (max-width: 800px) {
         flex-direction: row;
         font-size: 1.5rem;
-    }
-
-    &__anim {
-        animation-name: my;
-        animation-duration: 1s;
-    }
-
-    @keyframes my {
-        // 0% {font-size: 2rem;}
-        // 50% {font-size: 4rem;}
-        // 100% {font-size: 3rem;}
     }
 }

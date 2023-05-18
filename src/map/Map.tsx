@@ -3,7 +3,6 @@ import React, { RefObject } from 'react';
 import './Map.scss';
 import { LinearProgress } from '@material-ui/core';
 
-import axios from 'axios';
 import * as d3 from 'd3';
 import { rangesConfigCases } from '../shared/config';
 import { manageColors } from 'charts';
@@ -34,7 +33,8 @@ class Map extends React.Component<Props, State> {
     loading: true,
     width: 0,
     endpoints: {
-      countries: "https://coronavirus-19-api.herokuapp.com/countries",
+      // countries: "https://coronavirus-19-api.herokuapp.com/countries",
+      countries: "./mock-data.json",
       map: "./eu.json"
     }
   };
@@ -56,7 +56,9 @@ class Map extends React.Component<Props, State> {
     const promiseMap: Promise<any> = d3.json(this.state.endpoints.map, {
       headers: { Accept: "application/json; odata=verbose"}
     });
-    const promiseData: Promise<any> = axios.get(this.state.endpoints.countries);
+    const promiseData: Promise<any> = d3.json(this.state.endpoints.countries, {
+      headers: { Accept: "application/json; odata=verbose"}
+    });
 
     Promise.all([promiseMap, promiseData]).then((dataArray: [FeatureCollection, {data: Info[]}]) => {
       const mapData: FeatureCollection = dataArray[0];

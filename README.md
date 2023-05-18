@@ -13,23 +13,26 @@ Written in React(Typescipt) and Scss.
 <img src="/docs/app.png" width="1000" height="450"/>
 <img src="/docs/app_mobile.jpg" width="200" height="400"/>
 
-## Build
+## Install
 Node: 12.13.1  
 Npm: 6.12.1  
 
 ```
 npm install
 ```
-```
-npm run build
-```
 
-## Deploy
+## Build
 In charts dir:
 ```
 npm run build
 ```
 
+In root dir:
+```
+npm run build
+```
+
+## Deploy
 In root dir:
 ```
 npm run deploy

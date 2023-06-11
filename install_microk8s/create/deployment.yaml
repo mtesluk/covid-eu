@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: covid-eu-gui
+  name: covid-eu-gui
+  namespace: covid-eu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: covid-eu-gui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: covid-eu-gui
+    spec:
+      containers:
+      - image: mtesluk/covid-eu
+        name: demo-v1
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: covid-eu-gui
+  name: covid-eu-gui
+  namespace: covid-eu
+spec:
+  ports:
+  - name: 80-80
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: covid-eu-gui
+  type: ClusterIP
+status:
+  loadBalancer: {}

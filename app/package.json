@@ -2,7 +2,7 @@
   "name": "covid-eu",
   "version": "1.1.0",
   "private": true,
-  "homepage": "http://mtesluk.github.io/covid-eu",
+  "homepage": "",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",

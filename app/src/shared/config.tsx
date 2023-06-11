@@ -6,10 +6,10 @@ export const mostCommonColor: string = '#500000';
 export const rangesConfigCases: RangeConfig = {
   ranges: [
     {min: 0, max: 10000000, color: '#fff1d9'},
-    {min: 1000001, max: 20000000, color: '#fdcd8b'},
-    {min: 2000001, max: 30000000, color: '#b55440'},
-    {min: 3000001, max: 40000000, color: '#b53828'},
-    {min: 4000001, max: 700000000, color: mostCommonColor},
+    {min: 10000001, max: 20000000, color: '#fdcd8b'},
+    {min: 20000001, max: 30000000, color: '#b55440'},
+    {min: 30000001, max: 50000000, color: '#b53828'},
+    {min: 50000001, max: 700000000, color: mostCommonColor},
   ],
   default: '#000',
 };
